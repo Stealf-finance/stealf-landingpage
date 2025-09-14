@@ -242,7 +242,7 @@ export default function Home() {
               <h3 className="text-xl font-bold mb-4 font-sansation">Your Keys, Your Bank</h3>
               <p className="text-foreground/70 font-sansation">
                 You keep total control. No traditional bank can freeze your funds.
-                It's your bank, with your rules.
+                <p>It&apos;s your bank, with your rules.</p>
               </p>
             </div>
           </div>
