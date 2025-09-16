@@ -34,14 +34,17 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --border: #e5e7eb;
-  --muted: #f3f4f6;
-  --primary: #3b82f6;
-  --primary-foreground: #ffffff;
-  --card: #ffffff;
-  --ring: #3b82f6;
+  --background: #000000;
+  --foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.1);
+  --muted: rgba(255, 255, 255, 0.05);
+  --primary: #ffffff;
+  --primary-foreground: #000000;
+  --card: rgba(255, 255, 255, 0.03);
+  --ring: #ffffff;
+  --accent: #888888;
+  --gradient-start: rgba(255, 255, 255, 0.1);
+  --gradient-end: rgba(136, 136, 136, 0.05);
 }
 
 @theme inline {
@@ -53,30 +56,84 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-card: var(--card);
   --color-ring: var(--ring);
-  --font-sans: var(--font-geist-sans);
+  --color-accent: var(--accent);
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: var(--font-geist-mono);
-  --font-sansation: 'Sansation', sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --border: #374151;
-    --muted: #1f2937;
-    --primary: #60a5fa;
-    --primary-foreground: #0f172a;
-    --card: #1f2937;
-    --ring: #60a5fa;
-  }
+  --font-sansation: 'Sansation', Inter, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .font-sansation {
-  font-family: 'Sansation', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Sansation', Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Modern gradient backgrounds */
+.gradient-radial {
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+}
+
+.gradient-overlay {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(136, 136, 136, 0.05) 100%);
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); }
+  to { box-shadow: 0 0 30px rgba(255, 255, 255, 0.4); }
+}
+
+/* Modern card effects */
+.card-modern {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card-modern:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Allow mouse events to pass through to background when not on interactive elements */
+.mouse-pass-through {
+  pointer-events: none;
+}
+
+.mouse-pass-through * {
+  pointer-events: auto;
+}
+
+/* Ensure buttons and links are interactive */
+button, a, input, textarea {
+  pointer-events: auto !important;
 }

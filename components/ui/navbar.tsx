@@ -31,7 +31,7 @@ export function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -61,12 +61,12 @@ export function Navbar() {
                 />
                 {/* Subtle glow effect */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg transition-all duration-300 ${
+                  className={`absolute inset-0 bg-gradient-to-r from-white/5 to-gray-300/5 rounded-lg transition-all duration-300 ${
                     hoveredItem === item.name ? "opacity-100 scale-100" : "opacity-0 scale-95"
                   }`}
                 />
                 <div
-                  className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 ${
+                  className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-white to-gray-300 transition-all duration-300 ${
                     isActive() ? "w-full opacity-100" : "w-0 opacity-0"
                   }`}
                 />
