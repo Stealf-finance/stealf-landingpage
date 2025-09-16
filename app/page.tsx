@@ -245,7 +245,7 @@ export default function Home() {
                   </span>
                 </h3>
                 <p className="text-lg text-foreground/60 max-w-2xl mx-auto font-sansation font-light leading-relaxed">
-                  Built on revolutionary protocols that redefine what's possible in digital banking
+                  Built on revolutionary protocols that redefine what s possible in digital banking
                 </p>
               </div>
 
@@ -600,7 +600,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-2xl font-bold mb-3 font-sansation">Contact Us</h3>
-                  <p className="text-foreground/70 font-sansation">Send us your request and we'll get back to you quickly</p>
+                  <p className="text-foreground/70 font-sansation">Send us your request and we ll get back to you quickly</p>
                 </div>
 
                 <form className="space-y-6" onSubmit={(e) => {
