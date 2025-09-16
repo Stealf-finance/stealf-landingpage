@@ -37,7 +37,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="text-white font-bold text-xl tracking-tight font-sansation">
-              <span className="text-2xl">⚡</span> KERO
+              STEALF
             </div>
           </Link>
 

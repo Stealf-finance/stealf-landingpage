@@ -3,8 +3,9 @@
 import { Navbar } from "@/components/ui/navbar"
 import { Button } from "@/components/ui/button"
 import { Footer } from "@/components/ui/footer"
+import Image from "next/image"
 
-export function KeroHero() {
+export function StealfHero() {
   return (
     <main id="about" className="h-[80vh] flex flex-col items-center justify-center px-6 py-12 relative">
       {/* Background gradient effects */}
@@ -18,40 +19,17 @@ export function KeroHero() {
       <div className="relative z-10 flex flex-col items-center text-center max-w-4xl">
         {/* Logo with glow effect */}
         <div className="mb-8 relative">
-          <div className="w-20 h-20 bg-card rounded-2xl flex items-center justify-center relative shadow-2xl">
+          <div className="w-32 h-32 bg-card/20 rounded-2xl flex items-center justify-center relative shadow-2xl backdrop-blur-sm">
             {/* Glow effect */}
-            <div className="absolute inset-0 bg-primary/30 rounded-2xl blur-xl scale-110"></div>
-            <div className="relative z-10">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-primary"
-              >
-                <path
-                  d="M12 2L2 7L12 12L22 7L12 2Z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M2 17L12 22L22 17"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M2 12L12 17L22 12"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+            <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl scale-110"></div>
+            <div className="relative z-10 p-4">
+              <Image
+                src="/logo-transparent.png"
+                alt="Stealf Logo"
+                width={200}
+                height={100}
+                className="w-auto h-30"
+              />
             </div>
           </div>
         </div>
@@ -59,7 +37,7 @@ export function KeroHero() {
         {/* Main heading */}
         <h1 className="text-4xl md:text-6xl font-bold mb-4 text-balance font-sansation">
           Bank Freely. Pay <br className="hidden md:block" />
-          Instantly. <span className="text-foreground/80 italic">With Kero.</span>
+          Instantly. <span className="text-foreground/80 italic">With Stealf.</span>
         </h1>
 
         {/* Subtitle */}
@@ -67,23 +45,23 @@ export function KeroHero() {
           The bank for those who want to have keys
         </p>
 
-        {/* CTA Button */}
-        <Button
-          size="lg"
-          className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold relative group overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/25 font-sansation"
+        {/* CTA Button with Twitter */}
+        <a
+          href="https://x.com/stealf_finance"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold relative group overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/25 font-sansation rounded-lg"
         >
           <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">
-            Join Us
+            Join Us on
             <svg
               width="20"
               height="20"
               viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+              fill="currentColor"
+              className="transition-transform duration-300 group-hover:scale-110"
             >
-              <path d="M7 17L17 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M7 7H17V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
           </span>
           {/* Enhanced glow effects */}
@@ -91,7 +69,7 @@ export function KeroHero() {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
           {/* Pulse effect on hover */}
           <div className="absolute inset-0 bg-primary/30 rounded-lg animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        </Button>
+        </a>
       </div>
     </main>
   )
@@ -101,67 +79,11 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black relative">
       <Navbar />
-      <KeroHero />
+      <StealfHero />
 
-      {/* Social Media Icons - Bottom of first page */}
+      {/* Scroll section */}
       <div className="py-16 px-6">
         <div className="flex flex-col items-center gap-8">
-          {/* Social Media Icons */}
-          <div className="flex items-center justify-center gap-6">
-            {/* X (Twitter) */}
-            <a href="#" className="group text-foreground/60 hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
-              <div className="p-3 rounded-full bg-card/30 border border-border/30 group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300 backdrop-blur-sm">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="transition-transform duration-300 group-hover:rotate-3">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-              </div>
-            </a>
-
-            {/* Telegram */}
-            <a href="#" className="group text-foreground/60 hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
-              <div className="p-3 rounded-full bg-card/30 border border-border/30 group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300 backdrop-blur-sm">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="transition-transform duration-300 group-hover:rotate-3">
-                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                </svg>
-              </div>
-            </a>
-
-            {/* LinkedIn */}
-            <a href="#" className="group text-foreground/60 hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
-              <div className="p-3 rounded-full bg-card/30 border border-border/30 group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300 backdrop-blur-sm">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="transition-transform duration-300 group-hover:rotate-3">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </div>
-            </a>
-
-            {/* Discord */}
-            <a href="#" className="group text-foreground/60 hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
-              <div className="p-3 rounded-full bg-card/30 border border-border/30 group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300 backdrop-blur-sm">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="transition-transform duration-300 group-hover:rotate-3">
-                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.445.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-                </svg>
-              </div>
-            </a>
-
-            {/* GitHub */}
-            <a href="#" className="group text-foreground/60 hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
-              <div className="p-3 rounded-full bg-card/30 border border-border/30 group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300 backdrop-blur-sm">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="transition-transform duration-300 group-hover:rotate-3">
-                  <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                </svg>
-              </div>
-            </a>
-
-            {/* Medium */}
-            <a href="#" className="group text-foreground/60 hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
-              <div className="p-3 rounded-full bg-card/30 border border-border/30 group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300 backdrop-blur-sm">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="transition-transform duration-300 group-hover:rotate-3">
-                  <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
-                </svg>
-              </div>
-            </a>
-          </div>
 
           {/* Scroll Down Arrow */}
           <div className="animate-bounce">
@@ -261,12 +183,14 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-primary">
-                      <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
+                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1 p-2">
+                    <Image
+                      src="/arcium.png"
+                      alt="Arcium Logo"
+                      width={100}
+                      height={100}
+                      className="w-auto h-full"
+                    />
                   </div>
                   <div>
                     <h4 className="text-xl font-semibold mb-2 font-sansation">Arcium Protocol</h4>
@@ -278,13 +202,14 @@ export default function Home() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-primary">
-                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                      <path d="M8 14S9.5 16 12 16S16 14 16 14" stroke="currentColor" strokeWidth="2"/>
-                      <line x1="9" y1="9" x2="9.01" y2="9" stroke="currentColor" strokeWidth="2"/>
-                      <line x1="15" y1="9" x2="15.01" y2="9" stroke="currentColor" strokeWidth="2"/>
-                    </svg>
+                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1 p-2">
+                    <Image
+                      src="/squads.png"
+                      alt="Squads Logo"
+                      width={100}
+                      height={100}
+                      className="w-auto h-full"
+                    />
                   </div>
                   <div>
                     <h4 className="text-xl font-semibold mb-2 font-sansation">Grid API by Squads</h4>
@@ -300,12 +225,14 @@ export default function Home() {
                 <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent animate-pulse"></div>
                   <div className="relative z-10 text-center">
-                    <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-primary">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                    <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 p-3">
+                      <Image
+                        src="/logo-transparent.png"
+                        alt="Stealf Logo"
+                        width={200}
+                        height={100}
+                        className="w-auto h-full"
+                      />
                     </div>
                     <h4 className="text-xl font-bold font-sansation mb-2">Zero-Knowledge Banking</h4>
                     <p className="text-sm text-foreground/70 font-sansation">
@@ -317,14 +244,14 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Kero vs Others Comparison */}
+          {/* Stealf vs Others Comparison */}
           <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-3xl p-12">
             <div className="text-center mb-12">
               <h3 className="text-2xl md:text-3xl font-bold mb-4 font-sansation">
-                Kero vs <span className="text-foreground/60">Traditional Solutions</span>
+                Stealf vs <span className="text-foreground/60">Traditional Solutions</span>
               </h3>
               <p className="text-foreground/70 max-w-2xl mx-auto font-sansation">
-                Discover why Kero revolutionizes the banking experience
+                Discover why Stealf revolutionizes the banking experience
               </p>
             </div>
 
@@ -367,16 +294,18 @@ export default function Home() {
                 </ul>
               </div>
 
-              {/* Kero */}
+              {/* Stealf */}
               <div className="text-center border-2 border-primary/30 rounded-2xl p-6 bg-primary/5">
-                <div className="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-primary">
-                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                <div className="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-6 p-2">
+                  <Image
+                    src="/logo-transparent.png"
+                    alt="Stealf Logo"
+                    width={200}
+                    height={100}
+                    className="w-auto h-full"
+                  />
                 </div>
-                <h4 className="text-lg font-semibold mb-4 font-sansation text-primary">Kero</h4>
+                <h4 className="text-lg font-semibold mb-4 font-sansation text-primary">Stealf</h4>
                 <ul className="text-sm text-foreground/90 space-y-2 font-sansation">
                   <li>• Your keys, your funds ✓</li>
                   <li>• Private transactions ✓</li>
@@ -442,30 +371,30 @@ export default function Home() {
 
                 <h3 className="text-3xl md:text-4xl font-bold mb-6 font-sansation">Join the Revolution</h3>
                 <p className="text-xl text-foreground/70 mb-10 max-w-2xl mx-auto font-sansation">
-                  Be among the first to experience truly private banking. Join our waitlist and get exclusive early access to Kero.
+                  Be among the first to experience truly private banking. Follow us on Twitter for exclusive updates and early access to Stealf.
                 </p>
 
-                <Button
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-8 text-xl font-bold relative group overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/25 font-sansation mb-6"
+                <a
+                  href="https://x.com/stealf_finance"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-8 text-xl font-bold relative group overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/25 font-sansation mb-6 rounded-lg"
                 >
                   <span className="relative z-10 flex items-center gap-3">
-                    Join Waitlist
+                    Follow us on
                     <svg
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                      fill="currentColor"
+                      className="transition-transform duration-300 group-hover:scale-110"
                     >
-                      <path d="M7 17L17 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M7 7H17V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                     </svg>
                   </span>
                   <div className="absolute inset-0 bg-primary/50 rounded-lg blur-lg scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                   <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
-                </Button>
+                </a>
 
                 <p className="text-sm text-foreground/50 font-sansation">
                   No spam, just updates on our launch progress and exclusive insights
@@ -473,85 +402,10 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Social Media and Community */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Community Section */}
-              <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-2xl p-8">
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-primary">
-                      <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
-                      <path d="M23 21V19C23 18.1636 22.5259 17.3679 21.7259 16.8482" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55332C18.7122 5.25592 18.9974 6.11872 18.9974 7.005C18.9974 7.89128 18.7122 8.75408 18.1676 9.45668C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3 font-sansation">Join Our Community</h3>
-                  <p className="text-foreground/70 font-sansation">Connect with us and stay updated on our journey to revolutionize private banking</p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  {/* Primary Social Links */}
-                  <a href="#" className="group bg-background/50 border border-border/50 rounded-xl p-4 hover:bg-primary/10 hover:border-primary/30 transition-all duration-300 hover:scale-105">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-primary">
-                          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="font-semibold font-sansation">Twitter</div>
-                        <div className="text-sm text-foreground/60 font-sansation">Follow updates</div>
-                      </div>
-                    </div>
-                  </a>
-
-                  <a href="#" className="group bg-background/50 border border-border/50 rounded-xl p-4 hover:bg-primary/10 hover:border-primary/30 transition-all duration-300 hover:scale-105">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-primary">
-                          <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="font-semibold font-sansation">Telegram</div>
-                        <div className="text-sm text-foreground/60 font-sansation">Join discussion</div>
-                      </div>
-                    </div>
-                  </a>
-
-                  <a href="#" className="group bg-background/50 border border-border/50 rounded-xl p-4 hover:bg-primary/10 hover:border-primary/30 transition-all duration-300 hover:scale-105">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-primary">
-                          <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.445.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="font-semibold font-sansation">Discord</div>
-                        <div className="text-sm text-foreground/60 font-sansation">Chat with us</div>
-                      </div>
-                    </div>
-                  </a>
-
-                  <a href="#" className="group bg-background/50 border border-border/50 rounded-xl p-4 hover:bg-primary/10 hover:border-primary/30 transition-all duration-300 hover:scale-105">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-primary">
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="font-semibold font-sansation">LinkedIn</div>
-                        <div className="text-sm text-foreground/60 font-sansation">Professional updates</div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-
+            {/* Contact Form */}
+            <div className="flex justify-center">
               {/* Contact Form */}
-              <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-2xl p-8">
+              <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-2xl p-8 max-w-md">
                 <div className="text-center mb-8">
                   <div className="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-primary">
@@ -559,14 +413,23 @@ export default function Home() {
                       <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 font-sansation">Contactez-nous</h3>
-                  <p className="text-foreground/70 font-sansation">Envoyez-nous votre demande et nous vous recontacterons rapidement</p>
+                  <h3 className="text-2xl font-bold mb-3 font-sansation">Contact Us</h3>
+                  <p className="text-foreground/70 font-sansation">Send us your request and we'll get back to you quickly</p>
                 </div>
 
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={(e) => {
+                  e.preventDefault();
+                  const formData = new FormData(e.target as HTMLFormElement);
+                  const name = formData.get('name') as string;
+                  const request = formData.get('request') as string;
+
+                  const message = `Hi! I'm ${name}.\n\nMessage: ${request}`;
+                  const telegramUrl = `https://t.me/CECOR84?text=${encodeURIComponent(message)}`;
+                  window.open(telegramUrl, '_blank');
+                }}>
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2 font-sansation">
-                      Nom complet *
+                      Full Name *
                     </label>
                     <input
                       type="text"
@@ -574,34 +437,14 @@ export default function Home() {
                       name="name"
                       required
                       className="w-full px-4 py-3 bg-background/50 border border-border/50 rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all duration-300 text-foreground placeholder-foreground/50 font-sansation"
-                      placeholder="Votre nom et prénom"
+                      placeholder="Your full name"
                     />
                   </div>
 
-                  <div>
-                    <label htmlFor="telegram" className="block text-sm font-medium text-foreground/80 mb-2 font-sansation">
-                      Pseudo Telegram *
-                    </label>
-                    <div className="relative">
-                      <div className="absolute left-3 top-1/2 -translate-y-1/2">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-primary">
-                          <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                        </svg>
-                      </div>
-                      <input
-                        type="text"
-                        id="telegram"
-                        name="telegram"
-                        required
-                        className="w-full pl-12 pr-4 py-3 bg-background/50 border border-border/50 rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all duration-300 text-foreground placeholder-foreground/50 font-sansation"
-                        placeholder="@votre_pseudo"
-                      />
-                    </div>
-                  </div>
 
                   <div>
                     <label htmlFor="request" className="block text-sm font-medium text-foreground/80 mb-2 font-sansation">
-                      Votre requête *
+                      Your Request *
                     </label>
                     <textarea
                       id="request"
@@ -609,7 +452,7 @@ export default function Home() {
                       rows={4}
                       required
                       className="w-full px-4 py-3 bg-background/50 border border-border/50 rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all duration-300 text-foreground placeholder-foreground/50 resize-none font-sansation"
-                      placeholder="Décrivez votre demande ou votre question..."
+                      placeholder="Describe your request or question..."
                     />
                   </div>
 
@@ -619,17 +462,15 @@ export default function Home() {
                     className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-4 text-lg font-semibold relative group overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/25 font-sansation"
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
-                      Envoyer le message
+                      Send via Telegram
                       <svg
                         width="20"
                         height="20"
                         viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="transition-transform duration-300 group-hover:translate-x-1"
+                        fill="currentColor"
+                        className="transition-transform duration-300 group-hover:scale-110"
                       >
-                        <path d="M22 2L11 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                       </svg>
                     </span>
                     <div className="absolute inset-0 bg-primary/50 rounded-lg blur-lg scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
