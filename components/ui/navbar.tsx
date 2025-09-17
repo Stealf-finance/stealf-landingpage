@@ -41,8 +41,8 @@ export function Navbar() {
             </div>
           </Link>
 
-          {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Navigation Links - Centered */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex items-center space-x-12">
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -53,18 +53,13 @@ export function Navbar() {
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 <span className={`relative z-10 ${isActive() ? "text-white" : ""}`}>{item.name}</span>
-                {/* Hover animation background */}
+                {/* Hover underline */}
                 <div
-                  className={`absolute inset-0 bg-gray-800/50 rounded-lg transition-all duration-300 ${
-                    hoveredItem === item.name ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                  className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-white to-gray-300 transition-all duration-300 ${
+                    hoveredItem === item.name ? "w-full opacity-100" : "w-0 opacity-0"
                   }`}
                 />
-                {/* Subtle glow effect */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-r from-white/5 to-gray-300/5 rounded-lg transition-all duration-300 ${
-                    hoveredItem === item.name ? "opacity-100 scale-100" : "opacity-0 scale-95"
-                  }`}
-                />
+                {/* Active state underline */}
                 <div
                   className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-white to-gray-300 transition-all duration-300 ${
                     isActive() ? "w-full opacity-100" : "w-0 opacity-0"

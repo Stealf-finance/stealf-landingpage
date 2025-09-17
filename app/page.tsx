@@ -3,7 +3,7 @@
 import { Navbar } from "@/components/ui/navbar"
 import { Button } from "@/components/ui/button"
 import { Footer } from "@/components/ui/footer"
-import { DotScreenShader } from "@/components/ui/background"
+import { ShaderBackground } from "@/components/ui/background"
 import Image from "next/image"
 
 export function StealfHero() {
@@ -91,6 +91,26 @@ export function StealfHero() {
               <div className="w-1 h-1 bg-white rounded-full animate-ping"></div>
             </div>
           </div>
+
+          {/* Scroll arrow */}
+          <div className="absolute -bottom-40 left-1/2 -translate-x-1/2">
+            <div className="animate-bounce">
+              <button
+                onClick={() => {
+                  const functionalitiesSection = document.querySelector('#fonctionalities');
+                  if (functionalitiesSection) {
+                    functionalitiesSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="group text-foreground/60 hover:text-foreground/90 transition-all duration-300 hover:scale-110"
+                aria-label="Scroll to how it works section"
+              >
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="transition-transform duration-300 group-hover:translate-y-1">
+                  <path d="M7 13L12 18L17 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -101,37 +121,22 @@ export default function Home() {
   return (
     <div className="bg-background relative min-h-screen">
       {/* Global Three.js Background */}
-      <DotScreenShader />
+      <ShaderBackground />
 
       {/* Global overlay for better readability */}
       <div className="fixed inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/20 pointer-events-none z-10"></div>
 
-      <div className="relative z-20" style={{ pointerEvents: 'auto' }}>
-        <Navbar />
-        <StealfHero />
-
-        {/* Scroll section - Minimized */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
-        <div className="animate-bounce">
-          <button
-            onClick={() => {
-              const functionalitiesSection = document.querySelector('#fonctionalities');
-              if (functionalitiesSection) {
-                functionalitiesSection.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-            className="group text-foreground/60 hover:text-foreground/90 transition-all duration-300 hover:scale-110"
-            aria-label="Scroll to how it works section"
-          >
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="transition-transform duration-300 group-hover:translate-y-1">
-              <path d="M7 13L12 18L17 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
+      <div className="relative z-20" style={{ pointerEvents: 'none' }}>
+        <div style={{ pointerEvents: 'auto' }}>
+          <Navbar />
         </div>
-      </div>
+        <div style={{ pointerEvents: 'auto' }}>
+          <StealfHero />
+        </div>
+
 
       {/* How It Works Section */}
-      <section id="fonctionalities" className="min-h-screen flex items-center py-20 px-6 relative">
+      <section id="fonctionalities" className="min-h-screen flex items-center py-20 px-6 relative" style={{ pointerEvents: 'auto' }}>
         <div className="max-w-7xl mx-auto relative w-full">
           {/* Section Header */}
           <div className="text-center mb-12">
@@ -245,7 +250,7 @@ export default function Home() {
                   </span>
                 </h3>
                 <p className="text-lg text-foreground/60 max-w-2xl mx-auto font-sansation font-light leading-relaxed">
-                  Built on revolutionary protocols that redefine what s possible in digital banking
+                  Built on revolutionary protocols that redefine what&apos;s possible in digital banking
                 </p>
               </div>
 
@@ -524,7 +529,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="min-h-screen flex items-center py-20 px-6 relative">
+      <section id="contact" className="min-h-screen flex items-center py-20 px-6 relative" style={{ pointerEvents: 'auto' }}>
         <div className="max-w-6xl mx-auto w-full">
           <div className="relative">
             {/* Section Header */}
@@ -600,7 +605,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-2xl font-bold mb-3 font-sansation">Contact Us</h3>
-                  <p className="text-foreground/70 font-sansation">Send us your request and we ll get back to you quickly</p>
+                  <p className="text-foreground/70 font-sansation">Send us your request and we&apos;ll get back to you quickly</p>
                 </div>
 
                 <form className="space-y-6" onSubmit={(e) => {
@@ -669,7 +674,9 @@ export default function Home() {
         </div>
       </section>
 
-        <Footer />
+        <div style={{ pointerEvents: 'auto' }}>
+          <Footer />
+        </div>
       </div>
     </div>
   )
