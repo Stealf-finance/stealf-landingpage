@@ -56,38 +56,70 @@ export function StealfHero() {
           The revolutionary neo-bank that puts <span className="text-white font-medium">privacy first</span> while keeping you in complete control of your digital assets
         </p>
 
-        {/* Premium CTA Button */}
-        <div className="relative group">
-          <a
-            href="https://x.com/stealf_finance"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-gradient-to-r from-white to-gray-200 hover:from-gray-100 hover:to-gray-300 text-black px-8 py-4 text-lg font-bold relative overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-white/20 font-sansation rounded-xl border border-white/20"
-          >
-            <span className="relative z-10 flex items-center gap-2 transition-all duration-300">
-              Join the Revolution
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110"
-              >
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </span>
-            {/* Layered glow effects */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/60 to-accent/60 rounded-2xl blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
-            {/* Shimmer effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
-          </a>
+        {/* Premium CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+          <div className="relative group">
+            <a
+              href="https://x.com/stealf_finance"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-white to-gray-200 hover:from-gray-100 hover:to-gray-300 text-black px-8 py-4 text-lg font-bold relative overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-white/20 font-sansation rounded-xl border border-white/20"
+            >
+              <span className="relative z-10 flex items-center gap-2 transition-all duration-300">
+                Follow on 
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </span>
+              {/* Layered glow effects */}
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/60 to-accent/60 rounded-2xl blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+              {/* Shimmer effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+            </a>
+          </div>
+
+          <div className="relative group">
+            <a
+              href="https://t.me/+1KiIlJTX5WIzMmM0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-white to-gray-200 hover:from-gray-100 hover:to-gray-300 text-black px-8 py-4 text-lg font-bold relative overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-white/20 font-sansation rounded-xl border border-white/20"
+            >
+              <span className="relative z-10 flex items-center gap-2 transition-all duration-300">
+                Join Telegram
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110"
+                >
+                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                </svg>
+              </span>
+              {/* Layered glow effects */}
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/60 to-accent/60 rounded-2xl blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+              {/* Shimmer effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+            </a>
+          </div>
+        </div>
+
+        <div className="relative group mt-8">
 
           {/* Floating action indicator */}
           <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-foreground/40 text-xs font-sansation animate-bounce">
             <div className="flex items-center gap-2">
               <div className="w-1 h-1 bg-white rounded-full animate-ping"></div>
-              Follow us on X
+              Join the Revolution
               <div className="w-1 h-1 bg-white rounded-full animate-ping"></div>
             </div>
           </div>
@@ -562,30 +594,54 @@ export default function Home() {
 
                 <h3 className="text-3xl md:text-4xl font-bold mb-6 font-sansation">Join the Revolution</h3>
                 <p className="text-xl text-foreground/70 mb-10 max-w-2xl mx-auto font-sansation">
-                  Be among the first to experience truly private banking. Follow us on Twitter for exclusive updates and early access to Stealf.
+                  Be among the first to experience truly private banking. Follow us on our social channels for exclusive updates and early access to Stealf.
                 </p>
 
-                <a
-                  href="https://x.com/stealf_finance"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-8 text-xl font-bold relative group overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/25 font-sansation mb-6 rounded-lg"
-                >
-                  <span className="relative z-10 flex items-center gap-3">
-                    Follow us on
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="transition-transform duration-300 group-hover:scale-110"
-                    >
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
-                  </span>
-                  <div className="absolute inset-0 bg-primary/50 rounded-lg blur-lg scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
-                </a>
+                <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-6">
+                  <a
+                    href="https://x.com/stealf_finance"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-8 text-xl font-bold relative group overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/25 font-sansation rounded-lg"
+                  >
+                    <span className="relative z-10 flex items-center gap-3">
+                      Follow on X
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className="transition-transform duration-300 group-hover:scale-110"
+                      >
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                      </svg>
+                    </span>
+                    <div className="absolute inset-0 bg-primary/50 rounded-lg blur-lg scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+                  </a>
+
+                  <a
+                    href="https://t.me/+1KiIlJTX5WIzMmM0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-accent-foreground px-12 py-8 text-xl font-bold relative group overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-accent/25 font-sansation rounded-lg"
+                  >
+                    <span className="relative z-10 flex items-center gap-3">
+                      Join Telegram
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className="transition-transform duration-300 group-hover:scale-110"
+                      >
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                      </svg>
+                    </span>
+                    <div className="absolute inset-0 bg-accent/50 rounded-lg blur-lg scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-white/20 to-accent/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+                  </a>
+                </div>
 
                 <p className="text-sm text-foreground/50 font-sansation">
                   No spam, just updates on our launch progress and exclusive insights
