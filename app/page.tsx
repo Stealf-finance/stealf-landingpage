@@ -214,7 +214,12 @@ export default function Home() {
 
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 glass rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 p-3">
+                  <a
+                    href="https://squads.xyz/grid"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-16 h-16 glass rounded-2xl flex items-center justify-center hover:scale-110 transition-transform duration-500 p-3 cursor-pointer"
+                  >
                     <Image
                       src="/squads.png"
                       alt="Squads Logo"
@@ -222,7 +227,7 @@ export default function Home() {
                       height={100}
                       className="w-full h-full object-contain"
                     />
-                  </div>
+                  </a>
                   <div>
                     <h3 className="text-2xl font-bold font-sansation group-hover:text-accent transition-colors duration-300">Grid Wallet</h3>
                     <p className="text-accent/70 font-sansation text-sm">KYC/AML Compliant</p>
@@ -276,7 +281,12 @@ export default function Home() {
 
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 glass rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 p-3">
+                  <a
+                    href="https://www.arcium.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-16 h-16 glass rounded-2xl flex items-center justify-center hover:scale-110 transition-transform duration-500 p-3 cursor-pointer"
+                  >
                     <Image
                       src="/arcium.png"
                       alt="Arcium Logo"
@@ -284,7 +294,7 @@ export default function Home() {
                       height={100}
                       className="w-full h-full object-contain"
                     />
-                  </div>
+                  </a>
                   <div>
                     <h3 className="text-2xl font-bold font-sansation group-hover:text-primary transition-colors duration-300">Private Wallet</h3>
                     <p className="text-primary/70 font-sansation text-sm">100% Anonymous</p>
@@ -369,7 +379,7 @@ export default function Home() {
                 </p>
 
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdDa0_45HbCjaTfllmbQmBN2jSC_zuHTwDpVxqunSv8MglLXQ/viewform"
+                  href="https://medium.com/@stealf.fi/stealf-stable-coin-based-neo-bank-with-arcium-52fc14b814cb"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-white/5 border border-white/20 hover:bg-white/10 hover:border-white/30 text-white px-8 py-4 text-lg font-bold relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/10 font-sansation rounded-xl group"
@@ -565,7 +575,7 @@ export default function Home() {
               </a>
 
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdDa0_45HbCjaTfllmbQmBN2jSC_zuHTwDpVxqunSv8MglLXQ/viewform"
+                href="https://medium.com/@stealf.fi/stealf-stable-coin-based-neo-bank-with-arcium-52fc14b814cb"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-110 group"
