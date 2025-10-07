@@ -365,7 +365,7 @@ export default function Home() {
 
                 <h3 className="text-3xl md:text-4xl font-bold mb-4 font-sansation">Want to dive deeper?</h3>
                 <p className="text-foreground/60 font-sansation text-lg leading-relaxed max-w-2xl mx-auto mb-8">
-                  Discover the technology behind Stealf, our vision for private banking, and how we're revolutionizing financial privacy on the blockchain.
+                  Discover the technology behind Stealf, our vision for private banking, and how we&apos;re revolutionizing financial privacy on the blockchain.
                 </p>
 
                 <a
@@ -413,7 +413,7 @@ export default function Home() {
                 <div className="glass p-10 rounded-2xl text-center group hover:scale-105 transition-all duration-300">
                   <h4 className="text-2xl font-bold mb-4 font-sansation text-white">Anonymous</h4>
                   <p className="text-foreground/60 font-sansation text-lg leading-relaxed">
-                    Arcium's multi-party computation makes your transactions untraceable.
+                    Arcium&apos;s multi-party computation makes your transactions untraceable.
                   </p>
                 </div>
 
@@ -469,7 +469,7 @@ export default function Home() {
                 </span>
               </h2>
               <p className="text-lg text-foreground/60 max-w-xl mx-auto font-sansation leading-relaxed">
-                We're open to <span className="text-white font-medium">partnerships, collaborations, suggestions,</span> and any questions you might have.
+                We&apos;re open to <span className="text-white font-medium">partnerships, collaborations, suggestions,</span> and any questions you might have.
               </p>
             </div>
 
