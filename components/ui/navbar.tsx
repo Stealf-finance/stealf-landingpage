@@ -9,7 +9,7 @@ export function Navbar() {
 
   const navItems = [
     { name: "HOME", href: "#about" },
-    { name: "FONCTIONALITIES", href: "#fonctionalities" },
+    { name: "FUNCTIONALITIES", href: "#fonctionalities" },
     { name: "CONTACT", href: "#contact" },
   ]
 
