@@ -74,7 +74,7 @@ export function Navbar() {
           {/* CTA Button (Desktop) */}
           <div className="hidden md:flex items-center">
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdDa0_45HbCjaTfllmbQmBN2jSC_zuHTwDpVxqunSv8MglLXQ/viewform"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSee5W7Yfdqm3IadAcqXPeGy5MVyGAt1sLptFh2HzbIEcNYrBg/viewform?usp=dialog"
               target="_blank"
               rel="noopener noreferrer"
               className="relative group bg-transparent border border-gray-600 text-white px-6 py-2.5 rounded-full hover:border-gray-400 transition-all duration-300 overflow-hidden font-medium font-sansation cursor-pointer"
