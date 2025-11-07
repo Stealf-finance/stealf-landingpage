@@ -450,7 +450,7 @@ export default function Home() {
                   Ready for true financial privacy ?
                 </p>
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdDa0_45HbCjaTfllmbQmBN2jSC_zuHTwDpVxqunSv8MglLXQ/viewform"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSee5W7Yfdqm3IadAcqXPeGy5MVyGAt1sLptFh2HzbIEcNYrBg/viewform?usp=dialog"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-gradient-to-r from-white to-gray-200 hover:from-gray-100 hover:to-gray-300 text-black px-10 py-5 text-xl font-bold relative overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-white/20 font-sansation rounded-xl group"
