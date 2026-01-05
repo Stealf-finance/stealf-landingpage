@@ -57,8 +57,8 @@ export default function AnimatedGenerateButton({
             )}
           >
             {Array.from(labelIdle).map((ch, i) => (
-              <span key={i} className="ui-anim-letter inline-block">
-                {ch}
+              <span key={i} className={clsx("ui-anim-letter inline-block", ch === " " && "w-[0.3em]")}>
+                {ch === " " ? "\u00A0" : ch}
               </span>
             ))}
           </div>
@@ -69,8 +69,8 @@ export default function AnimatedGenerateButton({
             )}
           >
             {Array.from(labelActive).map((ch, i) => (
-              <span key={i} className="ui-anim-letter inline-block">
-                {ch}
+              <span key={i} className={clsx("ui-anim-letter inline-block", ch === " " && "w-[0.3em]")}>
+                {ch === " " ? "\u00A0" : ch}
               </span>
             ))}
           </div>
