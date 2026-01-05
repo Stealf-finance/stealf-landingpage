@@ -27,7 +27,7 @@ const faqs = [
   {
     question: "What is your current stage?",
     answer:
-      "We are currently in development for beta. We plan to make the official launch in Q2 2026.",
+      "We are currently in development for beta. We plan to make the official launch in Q1 2026.",
   },
   {
     question: "Can I make card payments with Stealf?",
