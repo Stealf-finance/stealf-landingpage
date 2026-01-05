@@ -1,11 +1,40 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import Image from "next/image"
+import { useState, useEffect } from "react"
+import { createPortal } from "react-dom"
 
 export function Navbar() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [mobileMenuOpen])
 
   const navItems = [
     { name: "HOME", href: "#about" },
@@ -33,24 +62,37 @@ export function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+      scrolled
+        ? "bg-black/80 backdrop-blur-md"
+        : "bg-transparent"
+    }`}>
+      <div className="w-full pl-6 pr-6 py-4">
+        <div className="flex items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="text-white font-bold text-xl tracking-tight font-sansation">
+          <Link href="/" className="flex items-center space-x-3 md:ml-12">
+            <Image
+              src="/logo-transparent.png"
+              alt="Stealf Logo"
+              width={40}
+              height={40}
+              className="w-auto h-20"
+            />
+            <div className="text-white font-bold text-2xl tracking-tight font-sansation">
               STEALF
             </div>
           </Link>
 
-          {/* Navigation Links - Centered (Desktop) */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex items-center space-x-12">
-            {navItems.map((item) => (
+          {/* Navigation Links - Right aligned (Desktop) */}
+          <div className="hidden md:flex items-center space-x-6 ml-auto mr-12">
+            {navItems.map((item, index) => (
               <a
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="relative text-gray-300 hover:text-white transition-colors duration-200 py-2 px-3 font-medium font-sansation cursor-pointer"
+                className={`relative text-gray-300 hover:text-white transition-colors duration-200 py-2 font-medium font-sansation cursor-pointer ${
+                  index === navItems.length - 1 ? "pr-0" : "px-3"
+                }`}
                 onMouseEnter={() => setHoveredItem(item.name)}
                 onMouseLeave={() => setHoveredItem(null)}
               >
@@ -71,37 +113,12 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button (Desktop) */}
-          <div className="hidden md:flex items-center">
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSee5W7Yfdqm3IadAcqXPeGy5MVyGAt1sLptFh2HzbIEcNYrBg/viewform?usp=dialog"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative group bg-transparent border border-gray-600 text-white px-6 py-2.5 rounded-full hover:border-gray-400 transition-all duration-300 overflow-hidden font-medium font-sansation cursor-pointer"
-              onMouseEnter={() => setHoveredItem("cta")}
-              onMouseLeave={() => setHoveredItem(null)}
-            >
-              <span className="relative z-10">JOIN WAITLIST</span>
-              {/* Animated background */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-r from-gray-800/30 to-gray-700/30 transition-all duration-300 ${
-                  hoveredItem === "cta" ? "opacity-100 scale-100" : "opacity-0 scale-95"
-                }`}
-              />
-              {/* Subtle border glow */}
-              <div
-                className={`absolute inset-0 rounded-full border border-gray-400/50 transition-all duration-300 ${
-                  hoveredItem === "cta" ? "opacity-100 scale-100" : "opacity-0 scale-95"
-                }`}
-              />
-            </a>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button - Right aligned */}
+          <div className="md:hidden ml-auto">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-gray-300 hover:text-white transition-colors"
+              aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -116,30 +133,24 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-3">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className="block text-gray-300 hover:text-white transition-colors duration-200 py-2 font-medium font-sansation cursor-pointer"
-              >
-                {item.name}
-              </a>
-            ))}
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdDa0_45HbCjaTfllmbQmBN2jSC_zuHTwDpVxqunSv8MglLXQ/viewform"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full text-center bg-transparent border border-gray-600 text-white px-6 py-2.5 rounded-full hover:border-gray-400 transition-all duration-300 font-medium font-sansation mt-4"
-            >
-              JOIN WAITLIST
-            </a>
-          </div>
-        )}
       </div>
+
+      {/* Mobile Menu - Using Portal */}
+      {mounted && mobileMenuOpen && createPortal(
+        <div className="md:hidden fixed inset-0 top-[72px] bg-black/95 backdrop-blur-md border-t border-white/10 p-6 space-y-4 z-[99]">
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
+              className="block text-gray-300 hover:text-white transition-colors duration-200 py-3 font-medium font-sansation cursor-pointer text-lg"
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>,
+        document.body
+      )}
     </nav>
   )
 }

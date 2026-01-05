@@ -1,31 +1,337 @@
-import * as React from "react"
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import clsx from "clsx";
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  size?: 'default' | 'sm' | 'lg' | 'icon'
-}
+export type AnimatedGenerateButtonProps = {
+  className?: string;
+  labelIdle?: string;
+  labelActive?: string;
+  generating?: boolean;
+  highlightHueDeg?: number;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+  id?: string;
+  ariaLabel?: string;
+};
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, size = 'default', ...props }, ref) => {
-    return (
+export default function AnimatedGenerateButton({
+  className,
+  labelIdle = "Generate",
+  labelActive = "Generating",
+  generating = false,
+  highlightHueDeg = 210,
+  onClick,
+  type = "button",
+  disabled = false,
+  id,
+  ariaLabel,
+}: AnimatedGenerateButtonProps) {
+  return (
+    <div className={clsx("relative inline-block", className)} id={id}>
       <button
-        className={cn(
-          "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
-          {
-            "h-9 px-4 py-2": size === "default",
-            "h-8 rounded-md px-3 text-xs": size === "sm",
-            "h-10 rounded-md px-8": size === "lg",
-            "h-9 w-9": size === "icon",
-          },
-          className
+        type={type}
+        aria-label={ariaLabel || (generating ? labelActive : labelIdle)}
+        aria-pressed={generating}
+        disabled={disabled}
+        onClick={onClick}
+        className={clsx(
+          "ui-anim-btn",
+          "relative flex items-center justify-center cursor-pointer select-none",
+          "rounded-[24px] px-6 py-4",
+          "bg-[hsl(var(--background))] text-[hsl(var(--foreground))]",
+          "border border-[hsl(var(--border))]/20",
+          "shadow-[inset_0px_1px_1px_rgba(255,255,255,0.2),inset_0px_2px_2px_rgba(255,255,255,0.15),inset_0px_4px_4px_rgba(255,255,255,0.1),inset_0px_8px_8px_rgba(255,255,255,0.05),inset_0px_16px_16px_rgba(255,255,255,0.05),0_-1px_1px_rgba(0,0,0,0.02),0_-2px_2px_rgba(0,0,0,0.03),0_-4px_4px_rgba(0,0,0,0.05),0_-8px_8px_rgba(0,0,0,0.06),0_-16px_16px_rgba(0,0,0,0.08)]",
+          "transition-[box-shadow,border,background-color] duration-400"
         )}
-        ref={ref}
-        {...props}
-      />
-    )
-  }
-)
-Button.displayName = "Button"
+        style={
+          {
+            "--highlight-hue": `${highlightHueDeg}deg`,
+          } as React.CSSProperties
+        }
+      >
+        <div className="ui-anim-txt-wrapper relative flex min-w-[6.4em] items-center justify-center w-full">
+          <div
+            className={clsx(
+              "ui-anim-txt-1 absolute",
+              generating ? "opacity-0" : "animate-[ui-appear_1s_ease-in-out_forwards]"
+            )}
+          >
+            {Array.from(labelIdle).map((ch, i) => (
+              <span key={i} className="ui-anim-letter inline-block">
+                {ch}
+              </span>
+            ))}
+          </div>
+          <div
+            className={clsx(
+              "ui-anim-txt-2 absolute",
+              generating ? "opacity-100" : "opacity-0"
+            )}
+          >
+            {Array.from(labelActive).map((ch, i) => (
+              <span key={i} className="ui-anim-letter inline-block">
+                {ch}
+              </span>
+            ))}
+          </div>
+        </div>
+      </button>
+      <style jsx>{`
+        .ui-anim-btn {
+          --padding: 4px;
+          --radius: 24px;
+          --transition: 0.4s;
+          --highlight: hsl(var(--highlight-hue), 100%, 70%);
+          --highlight-50: hsla(var(--highlight-hue), 100%, 70%, 0.5);
+          --highlight-30: hsla(var(--highlight-hue), 100%, 70%, 0.3);
+          --highlight-20: hsla(var(--highlight-hue), 100%, 70%, 0.2);
+          --highlight-80: hsla(var(--highlight-hue), 100%, 70%, 0.8);
+          --ui-anim-svg-fill: #e8e8e8;
+        }
 
-export { Button }
+        .ui-anim-btn::before {
+          content: "";
+          position: absolute;
+          top: calc(0px - var(--padding));
+          left: calc(0px - var(--padding));
+          width: calc(100% + var(--padding) * 2);
+          height: calc(100% + var(--padding) * 2);
+          border-radius: calc(var(--radius) + var(--padding));
+          pointer-events: none;
+          background-image: linear-gradient(0deg, #0004, #000a);
+          z-index: -1;
+          transition: box-shadow var(--transition), filter var(--transition);
+          box-shadow:
+            0 -8px 8px -6px #0000 inset,
+            0 -16px 16px -8px #00000000 inset,
+            1px 1px 1px #fff2,
+            2px 2px 2px #fff1,
+            -1px -1px 1px #0002,
+            -2px -2px 2px #0001;
+        }
+
+        .ui-anim-btn::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          pointer-events: none;
+          background-image: linear-gradient(0deg, #fff, var(--highlight), var(--highlight-50), 8%, transparent);
+          background-position: 0 0;
+          opacity: 0;
+          transition: opacity var(--transition), filter var(--transition);
+        }
+
+        /* Letters */
+        .ui-anim-letter {
+          color: #ffffff88;
+          animation: ui-letter-anim 2s ease-in-out infinite;
+          transition: color var(--transition), text-shadow var(--transition), opacity var(--transition);
+        }
+
+        @keyframes ui-letter-anim {
+          50% {
+            text-shadow: 0 0 3px #fff8;
+            color: #fff;
+          }
+        }
+
+        /* SVG flicker */
+        .ui-anim-btn-svg {
+          filter: drop-shadow(0 0 2px #fff9);
+          animation: ui-flicker 2s linear infinite;
+          animation-delay: 0.5s;
+        }
+
+        @keyframes ui-flicker {
+          50% {
+            opacity: 0.3;
+          }
+        }
+
+        /* Text layers */
+        @keyframes ui-appear {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+
+        /* Focus swaps idle/active text with delays mimicking original */
+        .ui-anim-btn:focus .ui-anim-txt-1 {
+          animation: ui-opacity-swap 0.3s ease-in-out forwards;
+          animation-delay: 1s;
+        }
+        .ui-anim-btn:focus .ui-anim-txt-2 {
+          animation: ui-opacity-swap 0.3s ease-in-out reverse forwards;
+          animation-delay: 1s;
+        }
+
+        @keyframes ui-opacity-swap {
+          0% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+
+        .ui-anim-btn:focus .ui-anim-letter {
+          animation:
+            ui-focused-letter 1s ease-in-out forwards,
+            ui-letter-anim 1.2s ease-in-out infinite;
+          animation-delay: 0s, 1s;
+        }
+
+        @keyframes ui-focused-letter {
+          0%,
+          100% {
+            filter: blur(0px);
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(2);
+            filter: blur(10px) brightness(150%)
+              drop-shadow(-36px 12px 12px var(--highlight));
+          }
+        }
+
+        .ui-anim-btn:focus .ui-anim-btn-svg {
+          animation-duration: 1.2s;
+          animation-delay: 0.2s;
+        }
+
+        .ui-anim-btn:focus::before {
+          box-shadow:
+            0 -8px 12px -6px #fff3 inset,
+            0 -16px 16px -8px var(--highlight-20) inset,
+            1px 1px 1px #fff3,
+            2px 2px 2px #fff1,
+            -1px -1px 1px #0002,
+            -2px -2px 2px #0001;
+        }
+        .ui-anim-btn:focus::after {
+          opacity: 0.6;
+          -webkit-mask-image: linear-gradient(0deg, #fff, transparent);
+          mask-image: linear-gradient(0deg, #fff, transparent);
+          filter: brightness(100%);
+        }
+
+        /* Hover */
+        .ui-anim-btn:hover {
+          border-color: rgba(255, 255, 255, 0.3);
+          background-color: rgba(255, 255, 255, 0.05);
+        }
+        .ui-anim-btn:hover::before {
+          box-shadow:
+            0 -8px 8px -6px #fff4 inset,
+            0 -16px 16px -8px rgba(255, 255, 255, 0.1) inset,
+            1px 1px 1px #fff2,
+            2px 2px 2px #fff1,
+            -1px -1px 1px #0002,
+            -2px -2px 2px #0001;
+        }
+        .ui-anim-btn:hover::after {
+          opacity: 0.3;
+          background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.1), transparent);
+          -webkit-mask-image: linear-gradient(0deg, #fff, transparent);
+          mask-image: linear-gradient(0deg, #fff, transparent);
+        }
+        .ui-anim-btn:hover .ui-anim-btn-svg {
+          fill: #fff;
+          filter:
+            drop-shadow(0 0 3px var(--highlight))
+            drop-shadow(0 -4px 6px #0009);
+          animation: none;
+        }
+
+        /* Active */
+        .ui-anim-btn:active {
+          border-color: hsla(var(--highlight-hue), 100%, 80%, 0.7);
+          background-color: hsla(var(--highlight-hue), 50%, 20%, 0.5);
+        }
+        .ui-anim-btn:active::before {
+          box-shadow:
+            0 -8px 12px -6px #fffa inset,
+            0 -16px 16px -8px var(--highlight-80) inset,
+            1px 1px 1px #fff4,
+            2px 2px 2px #fff2,
+            -1px -1px 1px #0002,
+            -2px -2px 2px #0001;
+        }
+        .ui-anim-btn:active::after {
+          opacity: 1;
+          -webkit-mask-image: linear-gradient(0deg, #fff, transparent);
+          mask-image: linear-gradient(0deg, #fff, transparent);
+          filter: brightness(200%);
+        }
+        .ui-anim-btn:active .ui-anim-letter {
+          text-shadow: 0 0 1px hsla(var(--highlight-hue), 100%, 90%, 0.9);
+          animation: none;
+        }
+
+        /* Letter stagger delays 1:1 */
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(1),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(1) {
+          animation-delay: 0s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(2),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(2) {
+          animation-delay: 0.08s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(3),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(3) {
+          animation-delay: 0.16s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(4),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(4) {
+          animation-delay: 0.24s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(5),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(5) {
+          animation-delay: 0.32s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(6),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(6) {
+          animation-delay: 0.4s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(7),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(7) {
+          animation-delay: 0.48s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(8),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(8) {
+          animation-delay: 0.56s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(9),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(9) {
+          animation-delay: 0.64s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(10),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(10) {
+          animation-delay: 0.72s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(11),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(11) {
+          animation-delay: 0.8s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(12),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(12) {
+          animation-delay: 0.88s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(13),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(13) {
+          animation-delay: 0.96s;
+        }
+
+        /* Disabled */
+        .ui-anim-btn:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+      `}</style>
+    </div>
+  );
+}
