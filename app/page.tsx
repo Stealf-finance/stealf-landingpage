@@ -38,7 +38,7 @@ export function StealfHero() {
 
         {/* Enhanced subtitle */}
         <p className="text-lg md:text-xl text-foreground/60 mb-8 max-w-2xl text-pretty font-sansation font-light leading-relaxed">
-          The first neo bank on Solana that offers the possibility to make <span className="text-white font-medium">100% anonymous</span> transactions
+          The first neobank that harnesses blockchain power without sacrificing your privacy and you freedom.
         </p>
 
         {/* Premium CTA Button */}
