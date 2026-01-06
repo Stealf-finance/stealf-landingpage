@@ -119,7 +119,7 @@ export function CallToAction() {
             </a>
 
             <a
-              href="https://discord.gg/RWuEhQJj"
+              href="https://discord.gg/djD3gEwv"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-110 group"
