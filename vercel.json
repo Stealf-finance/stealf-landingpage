@@ -1,11 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/((?!\\.well-known).*)",
-      "destination": "https://www.stealf.xyz/$1",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/.well-known/apple-app-site-association",
