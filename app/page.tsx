@@ -334,7 +334,7 @@ export default function Home() {
                 const request = formData.get('request') as string;
 
                 const message = `Hi! I'm ${name}.\n\nMessage: ${request}`;
-                const telegramUrl = `https://t.me/CECOR84?text=${encodeURIComponent(message)}`;
+                const telegramUrl = `https://t.me/CECOR2B?text=${encodeURIComponent(message)}`;
                 window.open(telegramUrl, '_blank');
               }}>
                 <div>
