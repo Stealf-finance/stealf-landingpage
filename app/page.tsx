@@ -184,7 +184,7 @@ export function StealfHero() {
 
 export default function Home() {
   return (
-    <div id="scroll-container" className="bg-black relative h-screen overflow-y-auto lg:snap-y lg:snap-proximity scroll-smooth">
+    <div id="scroll-container" className="bg-black relative h-screen overflow-y-auto lg:snap-y lg:snap-mandatory scroll-smooth">
       <Navbar />
       <StealfHero />
 
