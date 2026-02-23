@@ -13,24 +13,21 @@ export function StealfHero() {
   return (
     <main id="about" className="min-h-screen flex items-center justify-center px-6 py-20 relative">
       {/* Content - Grid layout */}
-      <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-6 items-center max-w-7xl mx-auto w-full">
+      <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center max-w-7xl mx-auto w-full">
 
         {/* Left side - Text content */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 z-10">
         {/* Main heading with improved typography */}
         <div className="mb-6 relative">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance font-sansation leading-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-8xl font-bold text-balance font-sansation leading-[1.05] tracking-tight">
             <span className="bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent">
-              True privacy.
+              Capital,
             </span>
             <br />
             <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-              Real banking.
+              Re-Architected.
             </span>
             <br />
-            <span className="bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent italic text-3xl md:text-4xl lg:text-5xl">
-              With Stealf.
-            </span>
           </h1>
           {/* Subtle text glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/20 blur-2xl -z-10"></div>
@@ -38,8 +35,8 @@ export function StealfHero() {
 
         {/* Enhanced subtitle */}
         <p className="text-lg md:text-xl text-foreground/60 mb-8 max-w-2xl text-pretty font-sansation font-light leading-relaxed">
-          The first neobank that harnesses blockchain power without sacrificing your privacy and you freedom.
-        </p>
+          Compliant banking infrastructure with private on-chain capital allocation.
+          </p>
 
         {/* Premium CTA Button */}
         <div className="flex items-center justify-center lg:justify-start">
@@ -55,8 +52,8 @@ export function StealfHero() {
         </div>
 
         {/* Right side - Phone mockup image */}
-        <div className="relative flex flex-col items-center justify-center lg:justify-end gap-8">
-          <div className="relative w-full max-w-5xl">
+        <div className="relative flex flex-col items-center justify-center lg:justify-end gap-8 lg:translate-x-16">
+          <div className="relative w-full max-w-none">
             <Image
               src="/screen.png"
               alt="Stealf App Mockup - Cash and Privacy Wallets"
