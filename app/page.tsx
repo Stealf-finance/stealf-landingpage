@@ -26,11 +26,11 @@ export function StealfHero() {
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-8xl font-bold text-balance font-sansation leading-[1.05] tracking-tight">
             <span className="bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent">
-              Capital,
+              Your money,
             </span>
             <br />
             <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-              Re-Architected.
+              Your rules.
             </span>
             <br />
           </h1>
