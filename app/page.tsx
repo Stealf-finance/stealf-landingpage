@@ -13,7 +13,7 @@ export function StealfHero() {
   return (
     <main id="about" className="min-h-screen flex items-center justify-center px-6 py-20 relative">
       {/* Content - Grid layout */}
-      <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto w-full">
+      <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-6 items-center max-w-7xl mx-auto w-full">
 
         {/* Left side - Text content */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 z-10">
@@ -56,7 +56,7 @@ export function StealfHero() {
 
         {/* Right side - Phone mockup image */}
         <div className="relative flex flex-col items-center justify-center lg:justify-end gap-8">
-          <div className="relative w-full max-w-3xl">
+          <div className="relative w-full max-w-5xl">
             <Image
               src="/screen.png"
               alt="Stealf App Mockup - Cash and Privacy Wallets"

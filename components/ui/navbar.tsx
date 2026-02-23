@@ -67,16 +67,16 @@ export function Navbar() {
         ? "bg-black/80 backdrop-blur-md"
         : "bg-transparent"
     }`}>
-      <div className="w-full pl-6 pr-6 py-4">
+      <div className="max-w-7xl mx-auto w-full px-6 py-2">
         <div className="flex items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 md:ml-12">
+          <Link href="/" className="flex items-center space-x-3">
             <Image
               src="/logo-transparent.png"
               alt="Stealf Logo"
               width={40}
               height={40}
-              className="w-auto h-20"
+              className="w-auto h-12"
             />
             <div className="text-white font-bold text-2xl tracking-tight font-sansation">
               STEALF
@@ -84,7 +84,7 @@ export function Navbar() {
           </Link>
 
           {/* Navigation Links - Right aligned (Desktop) */}
-          <div className="hidden md:flex items-center space-x-6 ml-auto mr-12">
+          <div className="hidden md:flex items-center space-x-6 ml-auto">
             {navItems.map((item, index) => (
               <a
                 key={item.name}
