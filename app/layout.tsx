@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Stealf - The Private Neo-Bank",
+  title: "Stealf - Hold Crypto. Spend Cash. Stay Private.",
   description: "The neo-bank that makes you invisible on the blockchain while keeping full control of your finances. Experience truly private banking with Stealf.",
   icons: {
     icon: [
