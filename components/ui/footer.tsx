@@ -62,6 +62,13 @@ export function Footer() {
             </div>
           </div>
         </div>
+
+        {/* Bottom bar */}
+        <div className="border-t border-white/10 pt-8">
+          <p className="text-center text-white/40 text-sm font-sansation">
+            &copy; 2026 Stealf. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   )
