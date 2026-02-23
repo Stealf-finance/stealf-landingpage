@@ -4,11 +4,13 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { createPortal } from "react-dom"
+import AnimatedGenerateButton from "@/components/ui/button"
 
 export function Navbar() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [hidden, setHidden] = useState(false)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -16,11 +18,16 @@ export function Navbar() {
   }, [])
 
   useEffect(() => {
+    let lastScrollY = window.scrollY
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+      const currentScrollY = window.scrollY
+      setScrolled(currentScrollY > 50)
+      setHidden(currentScrollY > lastScrollY && currentScrollY > 100)
+      lastScrollY = currentScrollY
     }
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -36,9 +43,14 @@ export function Navbar() {
     }
   }, [mobileMenuOpen])
 
-  const navItems = [
-    { name: "HOME", href: "#about" },
-    { name: "FUNCTIONALITIES", href: "#fonctionalities" },
+  const centerItems: { name: string; href: string; external?: boolean }[] = [
+    { name: "PRODUCT", href: "#fonctionalities" },
+    { name: "ARCHITECTURE", href: "#architecture" },
+    { name: "FAQ", href: "#faq" },
+  ]
+
+  const rightItems: { name: string; href: string; external?: boolean }[] = [
+    { name: "DOCS", href: "https://stealf-1.gitbook.io/stealf-docs/", external: true },
     { name: "CONTACT", href: "#contact" },
   ]
 
@@ -55,18 +67,13 @@ export function Navbar() {
     setMobileMenuOpen(false) // Close mobile menu after navigation
   }
 
-  const isActive = () => {
-    // For anchor links, we'll handle active state differently
-    // You could implement intersection observer here for better UX
-    return false
-  }
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
       scrolled
         ? "bg-black/80 backdrop-blur-md"
         : "bg-transparent"
-    }`}>
+    } ${hidden ? "-translate-y-full" : "translate-y-0"}`}>
       <div className="max-w-7xl mx-auto w-full px-6 py-2">
         <div className="flex items-center">
           {/* Logo */}
@@ -83,34 +90,53 @@ export function Navbar() {
             </div>
           </Link>
 
-          {/* Navigation Links - Right aligned (Desktop) */}
-          <div className="hidden md:flex items-center space-x-6 ml-auto">
-            {navItems.map((item, index) => (
+          {/* Center Navigation Links (Desktop) */}
+          <div className="hidden md:flex items-center space-x-6 absolute left-1/2 -translate-x-1/2">
+            {centerItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className={`relative text-gray-300 hover:text-white transition-colors duration-200 py-2 font-medium font-sansation cursor-pointer ${
-                  index === navItems.length - 1 ? "pr-0" : "px-3"
-                }`}
+                className="relative text-white hover:text-white/80 transition-colors duration-200 py-2 font-medium font-sansation cursor-pointer px-3 text-sm"
                 onMouseEnter={() => setHoveredItem(item.name)}
                 onMouseLeave={() => setHoveredItem(null)}
               >
-                <span className={`relative z-10 ${isActive() ? "text-white" : ""}`}>{item.name}</span>
-                {/* Hover underline */}
+                <span className="relative z-10">{item.name}</span>
                 <div
                   className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-white to-gray-300 transition-all duration-300 ${
                     hoveredItem === item.name ? "w-full opacity-100" : "w-0 opacity-0"
                   }`}
                 />
-                {/* Active state underline */}
+              </a>
+            ))}
+          </div>
+
+          {/* Right side: Docs, Contact + CTA (Desktop) */}
+          <div className="hidden md:flex items-center gap-6 ml-auto">
+            {rightItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                onClick={item.external ? undefined : (e) => handleNavClick(e, item.href)}
+                className="relative text-white hover:text-white/80 transition-colors duration-200 py-2 font-medium font-sansation cursor-pointer text-sm"
+                onMouseEnter={() => setHoveredItem(item.name)}
+                onMouseLeave={() => setHoveredItem(null)}
+              >
+                <span className="relative z-10">{item.name}</span>
                 <div
                   className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-white to-gray-300 transition-all duration-300 ${
-                    isActive() ? "w-full opacity-100" : "w-0 opacity-0"
+                    hoveredItem === item.name ? "w-full opacity-100" : "w-0 opacity-0"
                   }`}
                 />
               </a>
             ))}
+            <AnimatedGenerateButton
+              onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSee5W7Yfdqm3IadAcqXPeGy5MVyGAt1sLptFh2HzbIEcNYrBg/viewform?usp=dialog', '_blank')}
+              labelIdle="Join Waitlist"
+              labelActive="Opening..."
+              highlightHueDeg={180}
+            />
           </div>
 
           {/* Mobile menu button - Right aligned */}
@@ -138,16 +164,25 @@ export function Navbar() {
       {/* Mobile Menu - Using Portal */}
       {mounted && mobileMenuOpen && createPortal(
         <div className="md:hidden fixed inset-0 top-[72px] bg-black/95 backdrop-blur-md border-t border-white/10 p-6 space-y-4 z-[99]">
-          {navItems.map((item) => (
+          {[...centerItems, ...rightItems].map((item) => (
             <a
               key={item.name}
               href={item.href}
-              onClick={(e) => handleNavClick(e, item.href)}
-              className="block text-gray-300 hover:text-white transition-colors duration-200 py-3 font-medium font-sansation cursor-pointer text-lg"
+              {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              onClick={item.external ? () => setMobileMenuOpen(false) : (e) => handleNavClick(e, item.href)}
+              className="block text-white hover:text-white/80 transition-colors duration-200 py-3 font-medium font-sansation cursor-pointer text-lg"
             >
               {item.name}
             </a>
           ))}
+          <div className="mt-4">
+            <AnimatedGenerateButton
+              onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSee5W7Yfdqm3IadAcqXPeGy5MVyGAt1sLptFh2HzbIEcNYrBg/viewform?usp=dialog', '_blank')}
+              labelIdle="Join Waitlist"
+              labelActive="Opening..."
+              highlightHueDeg={180}
+            />
+          </div>
         </div>,
         document.body
       )}

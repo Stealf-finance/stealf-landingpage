@@ -119,7 +119,7 @@ export function Features() {
                                     </div>
                                     <div className="space-y-2">
                                         <h2 className="text-lg font-medium transition">Two Wallets, One Account</h2>
-                                        <p className="text-foreground">Switch between traditional banking and blockchain privacy instantly with seamless wallet integration.</p>
+                                        <p className="text-foreground">Switch between traditional banking and blockchain  instantly with seamless wallet integration.</p>
                                     </div>
                                 </div>
                             </CardContent>

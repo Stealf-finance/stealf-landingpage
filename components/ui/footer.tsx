@@ -3,10 +3,6 @@ import Image from "next/image"
 export function Footer() {
   return (
     <footer className="relative bg-black border-t border-border/20">
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-primary/5 rounded-full blur-3xl"></div>
-      </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-16">
         {/* Main Footer Content */}
@@ -66,8 +62,9 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-8">
           <p className="text-center text-white/40 text-sm font-sansation">
-            &copy; 2026 Stealf. All rights reserved.
+            &copy; 2026 Stealf Corporation. All rights reserved.
           </p>
+          
         </div>
       </div>
     </footer>
