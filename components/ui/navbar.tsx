@@ -18,28 +18,32 @@ export function Navbar() {
   }, [])
 
   useEffect(() => {
-    let lastScrollY = window.scrollY
+    const container = document.getElementById('scroll-container')
+    if (!container) return
+
+    let lastScrollY = container.scrollTop
 
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
+      const currentScrollY = container.scrollTop
       setScrolled(currentScrollY > 50)
       setHidden(currentScrollY > lastScrollY && currentScrollY > 100)
       lastScrollY = currentScrollY
     }
 
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
+    container.addEventListener("scroll", handleScroll, { passive: true })
+    return () => container.removeEventListener("scroll", handleScroll)
   }, [])
 
   useEffect(() => {
+    const container = document.getElementById('scroll-container')
     if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
+      if (container) container.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = 'unset'
+      if (container) container.style.overflow = 'auto'
     }
 
     return () => {
-      document.body.style.overflow = 'unset'
+      if (container) container.style.overflow = 'auto'
     }
   }, [mobileMenuOpen])
 
@@ -56,15 +60,16 @@ export function Navbar() {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
-    const targetId = href.substring(1) // Remove the # from href
+    const targetId = href.substring(1)
     const targetElement = document.getElementById(targetId)
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+    const container = document.getElementById('scroll-container')
+    if (targetElement && container) {
+      container.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: 'smooth'
       })
     }
-    setMobileMenuOpen(false) // Close mobile menu after navigation
+    setMobileMenuOpen(false)
   }
 
 

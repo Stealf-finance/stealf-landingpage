@@ -151,16 +151,3 @@ body {
   transform: translateY(-5px);
 }
 
-/* Allow mouse events to pass through to background when not on interactive elements */
-.mouse-pass-through {
-  pointer-events: none;
-}
-
-.mouse-pass-through * {
-  pointer-events: auto;
-}
-
-/* Ensure buttons and links are interactive */
-button, a, input, textarea {
-  pointer-events: auto !important;
-}

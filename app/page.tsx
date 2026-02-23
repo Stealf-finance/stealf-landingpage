@@ -11,7 +11,7 @@ import { motion } from "framer-motion"
 
 export function StealfHero() {
   return (
-    <main id="about" className="min-h-screen flex items-center justify-center px-6 py-20 relative">
+    <main id="about" className="h-screen flex items-center justify-center px-6 relative snap-start shrink-0">
       {/* Content - Grid layout */}
       <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center max-w-7xl mx-auto w-full">
 
@@ -184,17 +184,12 @@ export function StealfHero() {
 
 export default function Home() {
   return (
-    <div className="bg-black relative min-h-screen">
-      <div className="relative" style={{ pointerEvents: 'none' }}>
-        <div style={{ pointerEvents: 'auto' }}>
-          <Navbar />
-        </div>
-        <div style={{ pointerEvents: 'auto' }}>
-          <StealfHero />
-        </div>
+    <div id="scroll-container" className="bg-black relative h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth">
+      <Navbar />
+      <StealfHero />
 
       {/* How It Works Section */}
-      <section id="fonctionalities" className="min-h-screen flex items-center py-20 px-6 relative" style={{ pointerEvents: 'auto' }}>
+      <section id="fonctionalities" className="h-screen flex items-center px-6 relative snap-start shrink-0">
         <div className="max-w-7xl mx-auto relative w-full">
           {/* Section Header */}
           <motion.div
@@ -306,7 +301,7 @@ export default function Home() {
       </section>
 
       {/* Architecture Diagram Section */}
-      <section id="architecture" className="py-20 md:py-32 px-6" style={{ pointerEvents: 'auto' }}>
+      <section id="architecture" className="h-screen flex items-center px-6 snap-start shrink-0">
         <div className="w-full max-w-4xl mx-auto flex flex-col items-center">
 
           {/* Header */}
@@ -403,21 +398,23 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <Features />
+      <div className="h-screen flex items-center snap-start shrink-0 w-full">
+        <Features />
+      </div>
 
       {/* Call to Action Section */}
-      <section className="py-16 md:py-32 px-6" style={{ pointerEvents: 'auto' }}>
+      <section className="h-screen flex items-center px-6 snap-start shrink-0">
         <CallToAction />
       </section>
 
       {/* FAQ Section */}
-      <div id="faq" style={{ pointerEvents: 'auto' }}>
+      <div id="faq" className="h-screen flex items-center snap-start shrink-0">
         <FAQ1 />
       </div>
 
       {/* Contact Section */}
-      <section id="contact" className="min-h-screen flex items-center py-20 px-6 relative" style={{ pointerEvents: 'auto' }}>
-        <div className="max-w-2xl mx-auto w-full">
+      <section id="contact" className="h-screen flex flex-col justify-center px-6 relative snap-start shrink-0">
+        <div className="max-w-2xl mx-auto w-full flex-1 flex items-center">
           <motion.div
             className="relative"
             initial={{ opacity: 0, y: 30 }}
@@ -487,12 +484,10 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </section>
-
-        <div style={{ pointerEvents: 'auto' }}>
+        <div className="w-full shrink-0">
           <Footer />
         </div>
-      </div>
+      </section>
     </div>
   )
 }
