@@ -11,7 +11,7 @@ import { motion } from "framer-motion"
 
 export function StealfHero() {
   return (
-    <main id="about" className="h-screen flex items-center justify-center px-6 relative snap-start shrink-0">
+    <main id="about" className="min-h-screen lg:h-screen flex items-center justify-center px-6 py-20 lg:py-0 relative snap-start shrink-0">
       {/* Content - Grid layout */}
       <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center max-w-7xl mx-auto w-full">
 
@@ -184,12 +184,14 @@ export function StealfHero() {
 
 export default function Home() {
   return (
-    <div id="scroll-container" className="bg-black relative h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth">
+    <div id="scroll-container" className="bg-black relative h-screen overflow-y-auto lg:snap-y lg:snap-mandatory scroll-smooth">
       <Navbar />
       <StealfHero />
 
+
+
       {/* How It Works Section */}
-      <section id="fonctionalities" className="h-screen flex items-center px-6 relative snap-start shrink-0">
+      <section id="fonctionalities" className="min-h-screen lg:h-screen flex items-center px-6 py-20 lg:py-0 relative snap-start shrink-0">
         <div className="max-w-7xl mx-auto relative w-full">
           {/* Section Header */}
           <motion.div
@@ -301,7 +303,7 @@ export default function Home() {
       </section>
 
       {/* Architecture Diagram Section */}
-      <section id="architecture" className="h-screen flex items-center px-6 snap-start shrink-0">
+      <section id="architecture" className="min-h-screen lg:h-screen flex items-center px-6 py-20 lg:py-0 snap-start shrink-0">
         <div className="w-full max-w-4xl mx-auto flex flex-col items-center">
 
           {/* Header */}
@@ -398,22 +400,22 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <div className="h-screen flex items-center snap-start shrink-0 w-full">
+      <div className="min-h-screen lg:h-screen flex items-center py-20 lg:py-0 snap-start shrink-0 w-full">
         <Features />
       </div>
 
       {/* Call to Action Section */}
-      <section className="h-screen flex items-center px-6 snap-start shrink-0">
+      <section className="min-h-screen lg:h-screen flex items-center px-6 py-20 lg:py-0 snap-start shrink-0">
         <CallToAction />
       </section>
 
       {/* FAQ Section */}
-      <div id="faq" className="h-screen flex items-center snap-start shrink-0">
+      <div id="faq" className="min-h-screen lg:h-screen flex items-center py-20 lg:py-0 snap-start shrink-0">
         <FAQ1 />
       </div>
 
       {/* Contact Section */}
-      <section id="contact" className="h-screen flex flex-col justify-center px-6 relative snap-start shrink-0">
+      <section id="contact" className="min-h-screen lg:h-screen flex flex-col justify-center px-6 py-20 lg:py-0 relative snap-start shrink-0">
         <div className="max-w-2xl mx-auto w-full flex-1 flex items-center">
           <motion.div
             className="relative"
