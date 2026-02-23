@@ -52,7 +52,7 @@ export function StealfHero() {
         </div>
 
         {/* Right side - Phone mockup image */}
-        <div className="relative flex flex-col items-center justify-center lg:justify-end gap-8 lg:translate-x-16">
+        <div className="relative flex flex-col items-center justify-center lg:justify-end gap-8 mt-12 lg:mt-0 lg:translate-x-16">
           <div className="relative w-full max-w-none">
             <Image
               src="/screen.png"
