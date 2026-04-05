@@ -1,15 +1,11 @@
 [
   {
-    "relation": [
-      "delegate_permission/common.handle_all_urls",
-      "delegate_permission/common.get_login_creds"
-    ],
+    "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
       "package_name": "com.stealf.app",
-      "sha256_cert_fingerprints": [
-        "52:47:1C:88:47:E0:C4:53:D9:FE:44:FB:A6:FD:61:28:E0:EA:EE:BE:20:AE:09:99:5C:28:05:4B:B7:D2:ED:D9"
-      ]
+      "sha256_cert_fingerprints":
+        ["52:47:1C:88:47:E0:C4:53:D9:FE:44:FB:A6:FD:61:28:E0:EA:EE:BE:20:AE:09:99:5C:28:05:4B:B7:D2:ED:D9"]
     }
   }
 ]
