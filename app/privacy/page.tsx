@@ -1,5 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import localFont from "next/font/local";
+
+const sansation = localFont({
+  src: [
+    { path: "../../public/font/Sansation/Sansation-Light.ttf", weight: "300", style: "normal" },
+    { path: "../../public/font/Sansation/Sansation-LightItalic.ttf", weight: "300", style: "italic" },
+    { path: "../../public/font/Sansation/Sansation-Regular.ttf", weight: "400", style: "normal" },
+    { path: "../../public/font/Sansation/Sansation-Italic.ttf", weight: "400", style: "italic" },
+    { path: "../../public/font/Sansation/Sansation-Bold.ttf", weight: "700", style: "normal" },
+    { path: "../../public/font/Sansation/Sansation-BoldItalic.ttf", weight: "700", style: "italic" },
+  ],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Privacy Policy - Stealf",
@@ -8,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicy() {
   return (
-    <main className="min-h-screen bg-black text-white px-6 py-16 md:px-12 md:py-24">
+    <main className={`${sansation.className} min-h-screen bg-black text-white px-6 py-16 md:px-12 md:py-24`}>
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
           Privacy Policy
