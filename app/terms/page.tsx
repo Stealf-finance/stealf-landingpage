@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Use - Stealf",
@@ -178,12 +179,12 @@ export default function TermsOfUse() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-neutral-800 text-center">
-          <a
+          <Link
             className="text-sm text-neutral-500 hover:text-white transition-colors"
             href="/"
           >
             ← Back to Stealf
-          </a>
+          </Link>
         </div>
       </div>
     </main>
