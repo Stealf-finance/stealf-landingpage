@@ -9,7 +9,7 @@ import { FAQ1 } from "@/components/ui/faq-monochrome"
 import Image from "next/image"
 import { motion } from "framer-motion"
 
-export function StealfHero() {
+function StealfHero() {
   return (
     <main id="about" className="min-h-screen flex items-center justify-center px-6 py-20 relative snap-start">
       {/* Content - Grid layout */}
