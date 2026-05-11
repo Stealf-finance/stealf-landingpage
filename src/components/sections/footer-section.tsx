@@ -74,22 +74,44 @@ export function FooterSection() {
           </div>
         </div>
 
-        {/* Legal */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 pt-6 border-t border-border text-sm text-muted-foreground">
-          <span>© {new Date().getFullYear()} Stealf. All rights reserved.</span>
-          <div className="flex items-center gap-6">
-            <Link
-              href="/privacy"
-              className="hover:text-foreground transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="hover:text-foreground transition-colors"
-            >
-              Terms of Use
-            </Link>
+        {/* Legal + contact + status */}
+        <div className="flex flex-col gap-3 pt-6 border-t border-border text-sm text-muted-foreground">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <span>© {new Date().getFullYear()} Stealf. All rights reserved.</span>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+              <Link
+                href="/privacy"
+                className="hover:text-foreground transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms"
+                className="hover:text-foreground transition-colors"
+              >
+                Terms of Use
+              </Link>
+              <a
+                href="mailto:louis@stealf.xyz?subject=Security%20disclosure"
+                className="hover:text-foreground transition-colors"
+              >
+                Security disclosure
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs">
+            <span className="text-muted-foreground/70">
+              Status: stealf.xyz · operational
+            </span>
+            <span className="text-muted-foreground/70">
+              Contact:{" "}
+              <a
+                href="mailto:louis@stealf.xyz"
+                className="hover:text-foreground transition-colors"
+              >
+                louis@stealf.xyz
+              </a>
+            </span>
           </div>
         </div>
       </div>
