@@ -17,7 +17,7 @@ export function HeroSection() {
             {hero.badge}
           </p>
           <div className="flex flex-col items-center justify-center gap-5">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tighter text-balance text-center text-primary">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tighter text-balance text-center text-foreground">
               {hero.title}
             </h1>
             <p className="text-base md:text-lg text-center text-muted-foreground font-medium text-balance leading-relaxed tracking-tight">
@@ -33,7 +33,7 @@ export function HeroSection() {
             </Link>
             <Link
               href={hero.cta.secondary.href}
-              className="h-10 flex items-center justify-center w-32 px-5 text-sm font-normal tracking-wide text-primary rounded-full transition-all ease-out active:scale-95 bg-white dark:bg-background border border-[#E5E7EB] dark:border-[#27272A] hover:bg-white/80 dark:hover:bg-background/80"
+              className="h-10 flex items-center justify-center w-32 px-5 text-sm font-normal tracking-wide text-foreground rounded-full transition-all ease-out active:scale-95 bg-white dark:bg-background border border-[#E5E7EB] dark:border-[#27272A] hover:bg-white/80 dark:hover:bg-background/80"
             >
               {hero.cta.secondary.text}
             </Link>

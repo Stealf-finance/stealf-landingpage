@@ -113,7 +113,7 @@ export function Navbar() {
           <div className="flex h-[56px] items-center justify-between p-4">
             <Link href="/" className="flex items-center gap-3">
               <Icons.logo className="size-7 md:size-10" />
-              <p className="text-lg font-semibold text-primary">SkyAgent</p>
+              <p className="text-lg font-semibold text-foreground">SkyAgent</p>
             </Link>
 
             <NavMenu />
@@ -169,7 +169,7 @@ export function Navbar() {
                 <div className="flex items-center justify-between">
                   <Link href="/" className="flex items-center gap-3">
                     <Icons.logo className="size-7 md:size-10" />
-                    <p className="text-lg font-semibold text-primary">
+                    <p className="text-lg font-semibold text-foreground">
                       SkyAgent
                     </p>
                   </Link>
@@ -202,10 +202,10 @@ export function Navbar() {
                             element?.scrollIntoView({ behavior: "smooth" });
                             setIsDrawerOpen(false);
                           }}
-                          className={`underline-offset-4 hover:text-primary/80 transition-colors ${
+                          className={`underline-offset-4 hover:text-foreground/80 transition-colors ${
                             activeSection === item.href.substring(1)
-                              ? "text-primary font-medium"
-                              : "text-primary/60"
+                              ? "text-foreground font-medium"
+                              : "text-foreground/60"
                           }`}
                         >
                           {item.name}

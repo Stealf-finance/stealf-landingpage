@@ -47,7 +47,7 @@ function PricingTabs({ activeTab, setActiveTab, className }: TabsProps) {
           <span
             className={cn(
               "relative block text-sm font-medium duration-200 shrink-0",
-              activeTab === tab ? "text-primary" : "text-muted-foreground",
+              activeTab === tab ? "text-foreground" : "text-muted-foreground",
             )}
           >
             {tab.charAt(0).toUpperCase() + tab.slice(1)}

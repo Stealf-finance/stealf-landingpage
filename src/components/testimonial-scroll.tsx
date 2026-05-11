@@ -29,7 +29,7 @@ export const TestimonialCard = ({
     )}
     {...props}
   >
-    <div className="select-none leading-relaxed font-normal text-primary/90">
+    <div className="select-none leading-relaxed font-normal text-foreground/90">
       {description}
     </div>
 
@@ -37,8 +37,8 @@ export const TestimonialCard = ({
       <img src={img} alt={name} className="size-8 rounded-full" />
 
       <div>
-        <p className="font-medium text-primary/90">{name}</p>
-        <p className="text-xs font-normal text-primary/50">{role}</p>
+        <p className="font-medium text-foreground/90">{name}</p>
+        <p className="text-xs font-normal text-foreground/50">{role}</p>
       </div>
     </div>
   </div>

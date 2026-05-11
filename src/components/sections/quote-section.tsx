@@ -10,7 +10,7 @@ export function QuoteSection() {
       className="flex flex-col items-center justify-center gap-8 w-full p-14 bg-accent z-20"
     >
       <blockquote className="max-w-3xl text-left px-4">
-        <p className="text-xl md:text-2xl text-primary leading-relaxed tracking-tighter font-medium mb-6">
+        <p className="text-xl md:text-2xl text-foreground leading-relaxed tracking-tighter font-medium mb-6">
           {quoteSection.quote}
         </p>
 
@@ -23,10 +23,10 @@ export function QuoteSection() {
             />
           </div>
           <div className="text-left">
-            <cite className="text-lg font-medium text-primary not-italic">
+            <cite className="text-lg font-medium text-foreground not-italic">
               {quoteSection.author.name}
             </cite>
-            <p className="text-sm text-primary">{quoteSection.author.role}</p>
+            <p className="text-sm text-foreground">{quoteSection.author.role}</p>
           </div>
         </div>
       </blockquote>

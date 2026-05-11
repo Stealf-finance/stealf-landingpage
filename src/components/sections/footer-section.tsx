@@ -15,7 +15,7 @@ export function FooterSection() {
         <div className="flex flex-col items-start justify-start gap-y-5 max-w-xs mx-0">
           <Link href="/" className="flex items-center gap-2">
             <Icons.logo className="size-8" />
-            <p className="text-xl font-semibold text-primary">SkyAgent</p>
+            <p className="text-xl font-semibold text-foreground">SkyAgent</p>
           </Link>
           <p className="tracking-tight text-muted-foreground font-medium">
             {siteConfig.hero.description}
@@ -35,7 +35,7 @@ export function FooterSection() {
           <div className="flex flex-col items-start justify-start md:flex-row md:items-center md:justify-between gap-y-5 lg:pl-10">
             {siteConfig.footerLinks.map((column, columnIndex) => (
               <ul key={columnIndex} className="flex flex-col gap-y-2">
-                <li className="mb-2 text-sm font-semibold text-primary">
+                <li className="mb-2 text-sm font-semibold text-foreground">
                   {column.title}
                 </li>
                 {column.links.map((link) => (
