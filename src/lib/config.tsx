@@ -217,28 +217,6 @@ export const siteConfig = {
       },
     ],
   },
-  benefits: [
-    {
-      id: 1,
-      text: "Save hours each week with AI-optimized scheduling.",
-      image: "/Device-6.png",
-    },
-    {
-      id: 2,
-      text: "Reduce scheduling conflicts and double-bookings.",
-      image: "/Device-7.png",
-    },
-    {
-      id: 3,
-      text: "Improve work-life balance with smart time allocation.",
-      image: "/Device-8.png",
-    },
-    {
-      id: 4,
-      text: "Increase productivity with AI-driven time management insights.",
-      image: "/Device-1.png",
-    },
-  ],
   quoteSection: {
     quote:
       "Crypto cards are exploding. AI reads it all: balances, flows, habits — profiled at scale. Without native privacy, onchain isn't freedom anymore. It's a glass house.",
@@ -247,69 +225,6 @@ export const siteConfig = {
       role: "Technical Co-founder, Stealf",
       image: "/ppp.jpg",
     },
-  },
-  pricing: {
-    title: "Pricing that scales with you",
-    description:
-      "Whichever plan you pick, it's free until you love your docs. That's our promise.",
-    pricingItems: [
-      {
-        name: "Free",
-        href: "#",
-        price: "$0",
-        period: "month",
-        yearlyPrice: "$0",
-        features: [
-          "Custom domain",
-          "SEO-optimizations",
-          "Auto-generated API docs",
-          "Built-in components library",
-        ],
-        description: "Perfect for individual users",
-        buttonText: "Start Free",
-        buttonColor: "bg-accent text-foreground",
-        isPopular: false,
-      },
-      {
-        name: "Startup",
-        href: "#",
-        price: "$12",
-        period: "month",
-        yearlyPrice: "$120",
-        features: [
-          "Custom domain",
-          "SEO-optimizations",
-          "Auto-generated API docs",
-          "Built-in components library",
-          "E-commerce integration",
-          "User authentication system",
-          "Multi-language support",
-          "Real-time collaboration tools",
-        ],
-        description: "Ideal for professionals and small teams",
-        buttonText: "Upgrade to Pro",
-        buttonColor: "bg-secondary text-white",
-        isPopular: true,
-      },
-      {
-        name: "Enterprise",
-        href: "#",
-        price: "$24",
-        period: "month",
-        yearlyPrice: "$240",
-        features: [
-          "Custom domain",
-          "SEO-optimizations",
-          "Auto-generated API docs",
-          "Built-in components librarys",
-          "Real-time collaboration tools",
-        ],
-        description: "Best for large teams and enterprise-level organizations",
-        buttonText: "Contact Sales",
-        buttonColor: "bg-primary text-primary-foreground",
-        isPopular: false,
-      },
-    ],
   },
   faqSection: {
     title: "Frequently Asked Questions",
