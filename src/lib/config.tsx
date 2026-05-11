@@ -25,22 +25,29 @@ export const Highlight = ({
 export const BLUR_FADE_DELAY = 0.15;
 
 export const siteConfig = {
-  name: "Cal AI",
-  description: "Smart scheduling powered by AI.",
-  cta: "Get Started",
-  url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+  name: "Stealf",
+  description:
+    "A privacy-first neobank on Solana — Bank wallet (Turnkey custody, EUR cards & transfers) and Stealth wallet (self-custodial, Umbra-encrypted balance), in one app.",
+  cta: "Join Waitlist",
+  url: process.env.NEXT_PUBLIC_APP_URL || "https://stealf.xyz",
   keywords: [
-    "AI Calendar",
-    "Smart Scheduling",
-    "Productivity",
-    "Time Management",
+    "Solana",
+    "neobank",
+    "privacy",
+    "Umbra",
+    "stealth wallet",
+    "encrypted balance",
+    "Turnkey",
+    "Arcium",
+    "self-custody",
+    "stablecoin",
   ],
   links: {
-    email: "support@calai.app",
-    twitter: "https://twitter.com/calaiapp",
-    discord: "https://discord.gg/calaiapp",
-    github: "https://github.com/calaiapp",
-    instagram: "https://instagram.com/calaiapp",
+    email: "louis@stealf.xyz",
+    twitter: "https://x.com/stealf_finance",
+    discord: "https://discord.com/invite/7w2TFCm6Ft",
+    github: "https://github.com/Stealf-finance",
+    telegram: "https://t.me/+1KiIlJTX5WIzMmM0",
   },
   nav: {
     links: [
