@@ -90,6 +90,7 @@ export const siteConfig = {
       {
         id: 1,
         name: "Arcium",
+        role: "encrypted compute (MPC)",
         href: "https://www.arcium.com",
         logo: (
           <Image
@@ -104,6 +105,7 @@ export const siteConfig = {
       {
         id: 2,
         name: "Umbra",
+        role: "privacy",
         href: "https://www.umbraprivacy.com",
         logo: (
           <span className="font-bold text-2xl tracking-tight text-foreground leading-none">
@@ -114,6 +116,7 @@ export const siteConfig = {
       {
         id: 3,
         name: "Solana",
+        role: "settlement",
         href: "https://solana.com/",
         logo: (
           <span className="font-bold text-2xl tracking-tight text-foreground leading-none">
@@ -124,6 +127,7 @@ export const siteConfig = {
       {
         id: 4,
         name: "Helius",
+        role: "RPC & indexing",
         href: "https://www.helius.dev",
         logo: (
           <Image
@@ -138,6 +142,7 @@ export const siteConfig = {
       {
         id: 5,
         name: "Rain",
+        role: "card",
         href: "https://www.rain.xyz",
         logo: (
           <Image
@@ -152,6 +157,7 @@ export const siteConfig = {
       {
         id: 6,
         name: "Turnkey",
+        role: "custody (TEE)",
         href: "https://www.turnkey.com",
         logo: (
           <span className="font-bold text-2xl tracking-tight text-foreground leading-none">
