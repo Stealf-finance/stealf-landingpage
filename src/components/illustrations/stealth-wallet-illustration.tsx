@@ -38,7 +38,7 @@ export function StealthWalletIllustration() {
           width="245"
           height="282"
           viewBox="0 0 245 282"
-          className="size-full object-contain fill-accent"
+          className="size-full object-contain fill-[var(--gold)]"
         >
           <g filter="url(#filter0_dddd_2_33)">
             <path

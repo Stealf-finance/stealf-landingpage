@@ -29,6 +29,10 @@
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
+  --color-gold: var(--gold);
+  --color-gold-dim: var(--gold-dim);
+  --color-gold-faint: var(--gold-faint);
+  --color-gold-glow: var(--gold-glow);
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -257,25 +261,32 @@
 
 .dark {
   /* Stealf brand tokens — ported from stealf-app/src/design-system/tokens.ts */
-  --background: #0a0a0a;            /* T.bg */
-  --foreground: #f1ece1;            /* T.ink */
-  --card: #151513;                   /* T.bgRaised */
+  --background: #0a0a0a;                          /* T.bg */
+  --foreground: #f1ece1;                          /* T.ink */
+  --card: #151513;                                /* T.bgRaised */
   --card-foreground: #f1ece1;
   --popover: #151513;
   --popover-foreground: #f1ece1;
-  --primary: #c9a86a;                /* T.gold */
+  --primary: #f1ece1;                             /* ink — Stealf brand primary (NOT gold) */
   --primary-foreground: #0a0a0a;
-  --secondary: #1e1d1a;              /* T.bgRaised2 */
+  --secondary: #1e1d1a;                           /* T.bgRaised2 — surface for CTAs/cards */
   --secondary-foreground: #f1ece1;
   --muted: #1e1d1a;
-  --muted-foreground: rgba(241, 236, 225, 0.65);  /* T.inkDim */
-  --accent: #c9a86a;
-  --accent-foreground: #0a0a0a;
-  --destructive: #d1604a;            /* T.error */
+  --muted-foreground: rgba(241, 236, 225, 0.65); /* T.inkDim */
+  --accent: rgba(241, 236, 225, 0.06);            /* silver wash, NOT gold */
+  --accent-foreground: #f1ece1;
+  --destructive: #d1604a;                         /* T.error */
   --destructive-foreground: #f1ece1;
-  --border: rgba(241, 236, 225, 0.09);  /* T.hairline */
+  --border: rgba(241, 236, 225, 0.09);            /* T.hairline */
   --input: rgba(241, 236, 225, 0.09);
-  --ring: #c9a86a;
+  --ring: rgba(241, 236, 225, 0.35);              /* silver focus, NOT gold */
+
+  /* Privacy-scoped gold — opt-in only via var(--gold) or Tailwind text-gold/bg-gold.
+     Mirrors stealf-app: gold is reserved for Stealth wallet / privacy surfaces. */
+  --gold: #c9a86a;
+  --gold-dim: rgba(201, 168, 106, 0.5);
+  --gold-faint: rgba(201, 168, 106, 0.15);
+  --gold-glow: rgba(201, 168, 106, 0.28);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
