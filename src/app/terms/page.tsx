@@ -89,12 +89,12 @@ export default function TermsPage() {
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
               <li>
-                A <span className="text-foreground">Bank Wallet</span> managed
-                via Turnkey (Oauth authentication, smart wallet
+                A <span className="text-foreground">Bank wallet</span> managed
+                via Turnkey (OAuth authentication, smart wallet
                 infrastructure)
               </li>
               <li>
-                A <span className="text-foreground">Privacy Wallet</span>{" "}
+                A <span className="text-foreground">Stealth wallet</span>{" "}
                 generated locally or imported on your device, fully self-custodied
               </li>
               <li>Token swaps routed through Jupiter</li>
@@ -121,7 +121,7 @@ export default function TermsPage() {
               at all times.
             </p>
             <p className="text-muted-foreground">
-              <span className="text-foreground">For the Privacy Wallet:</span>{" "}
+              <span className="text-foreground">For the Stealth wallet:</span>{" "}
               the private key is generated on your device and stored locally in
               the secure enclave (iOS Keychain / Android Keystore). We do not
               store, backup, or have any access to this key. If you lose your
@@ -129,9 +129,9 @@ export default function TermsPage() {
               your funds are permanently lost. We cannot recover them.
             </p>
             <p className="text-muted-foreground">
-              <span className="text-foreground">For the Bank Wallet:</span>{" "}
-              authentication is handled via Oauth through Turnkey. If you
-              lose access to your Oauth and recovery methods, you may lose
+              <span className="text-foreground">For the Bank wallet:</span>{" "}
+              authentication is handled via OAuth through Turnkey. If you
+              lose access to your OAuth and recovery methods, you may lose
               access to this wallet.
             </p>
             <p className="text-muted-foreground">
@@ -140,7 +140,7 @@ export default function TermsPage() {
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
               <li>Keeping your device secure</li>
               <li>
-                Keeping your recovery phrase, Oauth, and any other
+                Keeping your recovery phrase, OAuth, and any other
                 credentials safe and confidential
               </li>
               <li>Verifying transaction details before signing</li>
@@ -255,8 +255,8 @@ export default function TermsPage() {
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
               <li>
-                <span className="text-foreground">Turnkey</span> (Oauth
-                authentication, Bank Wallet infrastructure)
+                <span className="text-foreground">Turnkey</span> (OAuth
+                authentication, Bank wallet infrastructure)
               </li>
               <li>
                 <span className="text-foreground">Helius</span> (Solana RPC and
@@ -427,7 +427,7 @@ export default function TermsPage() {
               <div>
                 Email:{" "}
                 <a
-                  href="mailto:contact@stealf.xyz"
+                  href="mailto:louis@stealf.xyz"
                   className="text-foreground hover:underline"
                 >
                   louis@stealf.xyz

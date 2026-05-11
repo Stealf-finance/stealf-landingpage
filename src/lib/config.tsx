@@ -213,7 +213,7 @@ export const siteConfig = {
         content: <StealthWalletIllustration />,
         title: "Stealth wallet",
         description:
-          "Stealth Wallet self-custodial, created locally or imported, powered by the Umbra Privacy SDK. You hold the keys, control what you share, and invest privately.",
+          "Self-custodial Stealth wallet, created locally or imported, powered by the Umbra Privacy SDK. You hold the keys, control what you share, and invest privately.",
       },
     ],
   },

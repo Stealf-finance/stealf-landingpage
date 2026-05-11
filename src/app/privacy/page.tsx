@@ -60,8 +60,8 @@ export default function PrivacyPage() {
               </li>
               <li>
                 <span className="text-foreground">Wallet addresses:</span> the
-                public address of your Bank Wallet (created via Turnkey) and
-                your Privacy Wallet (created locally on your device)
+                public address of your Bank wallet (created via Turnkey) and
+                your Stealth wallet (created locally on your device)
               </li>
               <li>
                 <span className="text-foreground">On-chain transactions:</span>{" "}
@@ -91,7 +91,7 @@ export default function PrivacyPage() {
             </p>
             <ul className="list-disc pl-6 space-y-3 text-muted-foreground">
               <li>
-                We never see or store the private key of your Privacy Wallet.
+                We never see or store the private key of your Stealth wallet.
                 It&apos;s generated on your device and stored in the secure
                 enclave (iOS Keychain / Android Keystore). It never leaves the
                 device.
@@ -102,7 +102,7 @@ export default function PrivacyPage() {
                 decrypt them without the multi-party computation.
               </li>
               <li>
-                We don&apos;t link your Bank Wallet and your Stealth Wallet.
+                We don&apos;t link your Bank wallet and your Stealth wallet.
                 There is no shared identifier between them in our system. The
                 separation is structural, not a policy choice.
               </li>
@@ -152,7 +152,7 @@ export default function PrivacyPage() {
             </h2>
             <p className="text-muted-foreground">
               Stealf uses OAuth (via Turnkey) to authenticate access to your
-              Bank Wallet. Biometric authentication (Face ID, Touch ID,
+              Bank wallet. Biometric authentication (Face ID, Touch ID,
               fingerprint) is handled locally by iOS or Android. We never
               receive, store, or transmit your facial images, biometric
               templates, fingerprints, or any biometric data. We only receive
@@ -191,7 +191,7 @@ export default function PrivacyPage() {
                   {[
                     [
                       "Turnkey",
-                      "Bank Wallet management, OAuth authentication",
+                      "Bank wallet management, OAuth authentication",
                       "Email, wallet address",
                     ],
                     [
@@ -283,10 +283,10 @@ export default function PrivacyPage() {
             <p className="text-muted-foreground">
               To exercise any of these rights, email us at{" "}
               <a
-                href="mailto:contact@stealf.xyz"
+                href="mailto:louis@stealf.xyz"
                 className="text-foreground hover:underline"
               >
-                contact@stealf.xyz
+                louis@stealf.xyz
               </a>{" "}
               from the email address linked to your account. We&apos;ll respond
               within 30 days.
@@ -324,7 +324,7 @@ export default function PrivacyPage() {
               We use industry-standard measures to protect your data: encryption
               in transit (HTTPS/WSS), encryption at rest, restricted access,
               rate limiting, and monitoring. No system is 100% secure, and you
-              are responsible for keeping your device, Oauth, and recovery
+              are responsible for keeping your device, OAuth, and recovery
               phrase safe.
             </p>
           </section>
@@ -345,7 +345,7 @@ export default function PrivacyPage() {
             <p className="text-muted-foreground">
               Questions? Email{" "}
               <a
-                href="mailto:contact@stealf.xyz"
+                href="mailto:louis@stealf.xyz"
                 className="text-foreground hover:underline"
               >
                 louis@stealf.xyz
