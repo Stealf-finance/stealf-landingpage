@@ -38,27 +38,20 @@ export function NavMenu() {
       if (isManualScroll) return;
 
       const sections = navs.map((item) => item.href.substring(1));
+      const scrollPosition = window.scrollY + 150;
 
-      // Find the section closest to viewport top
-      let closestSection = sections[0];
-      let minDistance = Infinity;
-
+      // Scrollspy: the last section whose top is above the scroll line is active.
+      let active = sections[0];
       for (const section of sections) {
         const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          const distance = Math.abs(rect.top - 100); // Offset by 100px to trigger earlier
-          if (distance < minDistance) {
-            minDistance = distance;
-            closestSection = section;
-          }
+        if (element && element.offsetTop <= scrollPosition) {
+          active = section;
         }
       }
 
-      // Update active section and nav indicator
-      setActiveSection(closestSection);
+      setActiveSection(active);
       const navItem = ref.current?.querySelector(
-        `[href="#${closestSection}"]`,
+        `[href="#${active}"]`,
       )?.parentElement;
       if (navItem) {
         const rect = navItem.getBoundingClientRect();

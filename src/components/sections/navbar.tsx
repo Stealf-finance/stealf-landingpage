@@ -1,12 +1,11 @@
 "use client";
 
-import { Icons } from "@/components/icons";
 import { NavMenu } from "@/components/nav-menu";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useScroll } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -112,8 +111,8 @@ export function Navbar() {
         >
           <div className="flex h-[56px] items-center justify-between p-4">
             <Link href="/" className="flex items-center gap-3">
-              <Icons.logo className="size-7 md:size-10" />
-              <p className="text-lg font-semibold text-foreground">SkyAgent</p>
+              <Image src="/logo-transparent.png" alt="stealf" width={40} height={40} className="size-7 md:size-10 object-contain" priority />
+              <p className="text-xl font-bold text-foreground tracking-tight">stealf</p>
             </Link>
 
             <NavMenu />
@@ -121,13 +120,13 @@ export function Navbar() {
             <div className="flex flex-row items-center gap-1 md:gap-3 shrink-0">
               <div className="flex items-center space-x-6">
                 <Link
-                  className="bg-secondary h-8 hidden md:flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-fit px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12]"
+                  className="bg-secondary h-8 hidden md:flex items-center justify-center gap-1.5 text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-fit px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] group"
                   href="#"
                 >
-                  Try for free
+                  Join Waitlist
+                  <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </div>
-              <ThemeToggle />
               <button
                 className="md:hidden border border-border size-8 rounded-md cursor-pointer flex items-center justify-center"
                 onClick={toggleDrawer}
@@ -168,9 +167,9 @@ export function Navbar() {
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
                   <Link href="/" className="flex items-center gap-3">
-                    <Icons.logo className="size-7 md:size-10" />
-                    <p className="text-lg font-semibold text-foreground">
-                      SkyAgent
+                    <Image src="/logo-transparent.png" alt="stealf" width={40} height={40} className="size-7 md:size-10 object-contain" priority />
+                    <p className="text-xl font-bold text-foreground tracking-tight">
+                      stealf
                     </p>
                   </Link>
                   <button
@@ -219,9 +218,10 @@ export function Navbar() {
                 <div className="flex flex-col gap-2">
                   <Link
                     href="#"
-                    className="bg-secondary h-8 flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-full px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95"
+                    className="bg-secondary h-8 flex items-center justify-center gap-1.5 text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-full px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95"
                   >
-                    Try for free
+                    Join Waitlist
+                    <ArrowRight className="size-3.5" />
                   </Link>
                 </div>
               </div>

@@ -18,7 +18,7 @@ export function FeatureSection() {
           {description}
         </p>
       </SectionHeader>
-      <div className="w-full h-full lg:h-[450px] flex items-center justify-center">
+      <div className="w-full h-full lg:h-[620px] flex items-center justify-center">
         <FeatureComponent
           collapseDelay={5000}
           linePosition="bottom"

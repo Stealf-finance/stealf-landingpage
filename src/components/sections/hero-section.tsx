@@ -1,5 +1,6 @@
 import { HeroVideoSection } from "@/components/sections/hero-video-section";
 import { siteConfig } from "@/lib/config";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export function HeroSection() {
@@ -24,19 +25,17 @@ export function HeroSection() {
               {hero.description}
             </p>
           </div>
-          <div className="flex items-center gap-2.5 flex-wrap justify-center">
+          <div className="flex flex-col items-center gap-3">
             <Link
               href={hero.cta.primary.href}
-              className="bg-secondary h-9 flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-32 px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95"
+              className="bg-secondary h-10 flex items-center justify-center gap-2 text-sm font-medium tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-48 px-5 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95 group"
             >
               {hero.cta.primary.text}
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
-            <Link
-              href={hero.cta.secondary.href}
-              className="h-10 flex items-center justify-center w-32 px-5 text-sm font-normal tracking-wide text-foreground rounded-full transition-all ease-out active:scale-95 bg-white dark:bg-background border border-[#E5E7EB] dark:border-[#27272A] hover:bg-white/80 dark:hover:bg-background/80"
-            >
-              {hero.cta.secondary.text}
-            </Link>
+            <p className="text-xs text-muted-foreground tracking-tight">
+              {hero.cta.primary.note}
+            </p>
           </div>
         </div>
       </div>
