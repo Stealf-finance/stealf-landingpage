@@ -90,7 +90,7 @@ export const siteConfig = {
         name: "Umbra",
         href: "https://www.umbraprivacy.com",
         logo: (
-          <span className="font-bold text-2xl tracking-tight text-foreground">
+          <span className="font-bold text-2xl tracking-tight text-foreground leading-none">
             Umbra Privacy
           </span>
         ),
@@ -100,7 +100,7 @@ export const siteConfig = {
         name: "Solana",
         href: "https://solana.com/",
         logo: (
-          <span className="font-bold text-2xl tracking-tight text-foreground">
+          <span className="font-bold text-2xl tracking-tight text-foreground leading-none">
             Solana
           </span>
         ),
@@ -138,7 +138,7 @@ export const siteConfig = {
         name: "Turnkey",
         href: "https://www.turnkey.com",
         logo: (
-          <span className="font-bold text-2xl tracking-tight text-foreground">
+          <span className="font-bold text-2xl tracking-tight text-foreground leading-none">
             Turnkey
           </span>
         ),
@@ -155,28 +155,28 @@ export const siteConfig = {
         title: "Import or create your stealth wallet",
         content:
           "Today you juggle two apps — banking and wallet — never really own your keys, and privacy means a third app on top. Stealf collapses all three into one: your keys, your privacy, by default.",
-        image: "/stealth-public.png",
+        image: "/screens/stealth-public.png",
       },
       {
         id: 2,
         title: "Shield any asset",
         content:
           "Move any token from your public balance into your encrypted balance inside Umbra Privacy in one tap. The deposit is public. From there, your balance stays private.",
-        image: "/stealth-private.png",
+        image: "/screens/stealth-private.png",
       },
       {
         id: 3,
         title: "Move funds between your wallets",
         content:
           "Move funds between your two wallets in two taps, privately. There's no direct on-chain link between them.",
-        image: "/move.png",
+        image: "/screens/move.png",
       },
       {
         id: 4,
         title: "Spend like a bank",
         content:
           "Compliant. Seamless. Global. Pay with your Stealf card. Transfer instantly. Fully regulated infrastructure",
-        image: "/bank.png",
+        image: "/screens/bank.png",
       },
     ],
   },
