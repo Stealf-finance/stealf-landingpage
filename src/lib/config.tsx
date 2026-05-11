@@ -24,6 +24,11 @@ export const Highlight = ({
 
 export const BLUR_FADE_DELAY = 0.15;
 
+// TODO(thomas): replace with the real Tally form URL before merge.
+// Single source of truth — referenced by hero, navbar, mobile drawer, and CTA section.
+export const WAITLIST_URL = "https://tally.so/r/STEALF_PLACEHOLDER";
+export const DOCS_URL = "https://stealf-1.gitbook.io/stealf-docs";
+
 export const siteConfig = {
   name: "Stealf",
   description:
@@ -71,8 +76,12 @@ export const siteConfig = {
     cta: {
       primary: {
         text: "Join Waitlist",
-        href: "#",
+        href: WAITLIST_URL,
         note: "+2,000 people already on the waitlist",
+      },
+      secondary: {
+        text: "Read the docs",
+        href: DOCS_URL,
       },
     },
   },
@@ -349,10 +358,10 @@ export const siteConfig = {
     title: "Hold crypto, Spend cash, Stay private.",
     backgroundImage: "/agent-cta-background.png",
     button: {
-      text: "",
-      href: "#",
+      text: "Join the waitlist",
+      href: WAITLIST_URL,
     },
-    subtext: "",
+    subtext: "Be first when we open up new seats.",
   },
   footerLinks: [
     {

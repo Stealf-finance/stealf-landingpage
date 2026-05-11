@@ -34,13 +34,25 @@ export function HeroSection() {
             </p>
           </div>
           <div className="flex flex-col items-center gap-3">
-            <Link
-              href={hero.cta.primary.href}
-              className="bg-secondary h-10 flex items-center justify-center gap-2 text-sm font-medium tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-48 px-5 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95 group"
-            >
-              {hero.cta.primary.text}
-              <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              <Link
+                href={hero.cta.primary.href}
+                target="_blank"
+                rel="noreferrer"
+                className="bg-secondary h-10 flex items-center justify-center gap-2 text-sm font-medium tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-48 px-5 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95 group"
+              >
+                {hero.cta.primary.text}
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+              <Link
+                href={hero.cta.secondary.href}
+                target="_blank"
+                rel="noreferrer"
+                className="h-10 flex items-center justify-center gap-2 text-sm font-medium tracking-wide rounded-full text-foreground w-48 px-5 border border-border hover:bg-accent transition-all ease-out active:scale-95"
+              >
+                {hero.cta.secondary.text}
+              </Link>
+            </div>
             <p className="text-xs text-muted-foreground tracking-tight">
               {hero.cta.primary.note}
             </p>

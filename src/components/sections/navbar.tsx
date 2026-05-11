@@ -1,7 +1,7 @@
 "use client";
 
 import { NavMenu } from "@/components/nav-menu";
-import { siteConfig } from "@/lib/config";
+import { siteConfig, WAITLIST_URL } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useScroll } from "motion/react";
@@ -121,7 +121,9 @@ export function Navbar() {
               <div className="flex items-center space-x-6">
                 <Link
                   className="bg-secondary h-8 hidden md:flex items-center justify-center gap-1.5 text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-fit px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] group"
-                  href="#"
+                  href={WAITLIST_URL}
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   Join Waitlist
                   <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -217,7 +219,9 @@ export function Navbar() {
                 {/* Action buttons */}
                 <div className="flex flex-col gap-2">
                   <Link
-                    href="#"
+                    href={WAITLIST_URL}
+                    target="_blank"
+                    rel="noreferrer"
                     className="bg-secondary h-8 flex items-center justify-center gap-1.5 text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-full px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95"
                   >
                     Join Waitlist
