@@ -20,15 +20,17 @@ export function CTASection() {
             fill
             priority
           />
-          <div className="absolute inset-0 flex flex-col items-center justify-start pt-16 md:pt-24 gap-6">
-            <h1 className="text-white text-2xl sm:text-3xl md:text-5xl font-medium tracking-tighter max-w-none px-6 text-center whitespace-nowrap leading-[1.1]">
-              {ctaSection.title}
-            </h1>
-            {ctaSection.subtext ? (
-              <p className="text-white/70 text-sm md:text-base px-6 text-center max-w-md">
-                {ctaSection.subtext}
-              </p>
-            ) : null}
+          <div className="absolute inset-0 flex flex-col items-center py-12 md:py-18 z-10">
+            <div className="flex-1 flex flex-col items-center justify-start gap-4 pt-12">
+              <h1 className="text-white text-2xl sm:text-3xl md:text-5xl font-medium tracking-tighter max-w-none px-6 text-center whitespace-nowrap leading-[1.1]">
+                {ctaSection.title}
+              </h1>
+              {ctaSection.subtext ? (
+                <p className="text-white/70 text-sm md:text-base px-6 text-center max-w-md">
+                  {ctaSection.subtext}
+                </p>
+              ) : null}
+            </div>
             {ctaSection.button.text ? (
               <Link
                 href={ctaSection.button.href}

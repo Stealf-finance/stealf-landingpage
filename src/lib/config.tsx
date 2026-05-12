@@ -119,9 +119,13 @@ export const siteConfig = {
         role: "settlement",
         href: "https://solana.com/",
         logo: (
-          <span className="font-bold text-2xl tracking-tight text-foreground leading-none">
-            Solana
-          </span>
+          <Image
+            src="/icons-protocols/solana.svg"
+            alt="Solana"
+            width={140}
+            height={32}
+            className="h-9 w-auto object-contain brightness-0 invert opacity-85"
+          />
         ),
       },
       {
@@ -160,9 +164,13 @@ export const siteConfig = {
         role: "custody (TEE)",
         href: "https://www.turnkey.com",
         logo: (
-          <span className="font-bold text-2xl tracking-tight text-foreground leading-none">
-            Turnkey
-          </span>
+          <Image
+            src="/icons-protocols/turnkey.svg"
+            alt="Turnkey"
+            width={140}
+            height={32}
+            className="h-9 w-auto object-contain brightness-0 invert opacity-85"
+          />
         ),
       },
     ],
