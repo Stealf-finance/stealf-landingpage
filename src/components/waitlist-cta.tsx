@@ -1,6 +1,5 @@
-"use client";
-
-import { toast } from "sonner";
+import Link from "next/link";
+import { WAITLIST_URL } from "@/lib/config";
 
 export function WaitlistCta({
   children,
@@ -10,12 +9,13 @@ export function WaitlistCta({
   className?: string;
 }) {
   return (
-    <button
-      type="button"
-      onClick={() => toast("Open soon")}
+    <Link
+      href={WAITLIST_URL}
+      target="_blank"
+      rel="noreferrer"
       className={className}
     >
       {children}
-    </button>
+    </Link>
   );
 }

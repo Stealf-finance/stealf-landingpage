@@ -24,9 +24,8 @@ export const Highlight = ({
 
 export const BLUR_FADE_DELAY = 0.15;
 
-// TODO(thomas): replace with the real Tally form URL before merge.
 // Single source of truth — referenced by hero, navbar, mobile drawer, and CTA section.
-export const WAITLIST_URL = "https://tally.so/r/STEALF_PLACEHOLDER";
+export const WAITLIST_URL = "https://form.typeform.com/to/ZA5GecRj";
 export const DOCS_URL = "https://stealf-1.gitbook.io/stealf-docs";
 
 export const siteConfig = {

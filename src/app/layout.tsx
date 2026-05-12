@@ -4,7 +4,6 @@ import { siteConfig } from "@/lib/site";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Cormorant_Garamond, JetBrains_Mono } from "next/font/google";
-import { Toaster } from "sonner";
 import "./globals.css";
 
 const sansation = localFont({
@@ -72,7 +71,6 @@ export default function RootLayout({
             <Navbar />
             {children}
           </div>
-          <Toaster position="bottom-center" theme="dark" />
         </ThemeProvider>
       </body>
     </html>
