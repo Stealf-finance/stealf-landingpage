@@ -105,7 +105,7 @@ export const siteConfig = {
       {
         id: 2,
         name: "Umbra",
-        role: "privacy",
+        role: "private transfers",
         href: "https://www.umbraprivacy.com",
         logo: (
           <span className="font-bold text-2xl tracking-tight text-foreground leading-none">
@@ -146,7 +146,7 @@ export const siteConfig = {
       {
         id: 5,
         name: "Rain",
-        role: "card",
+        role: "banking infrastructure",
         href: "https://www.rain.xyz",
         logo: (
           <Image
@@ -161,7 +161,7 @@ export const siteConfig = {
       {
         id: 6,
         name: "Turnkey",
-        role: "custody (TEE)",
+        role: "Secure, flexible, and scalable wallet infrastructure",
         href: "https://www.turnkey.com",
         logo: (
           <Image

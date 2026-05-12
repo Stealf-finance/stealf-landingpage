@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { WaitlistCta } from "@/components/waitlist-cta";
 import { siteConfig } from "@/lib/config";
 
 export function CTASection() {
@@ -21,7 +21,7 @@ export function CTASection() {
             priority
           />
           <div className="absolute inset-0 flex flex-col items-center py-12 md:py-18 z-10">
-            <div className="flex-1 flex flex-col items-center justify-start gap-4 pt-12">
+            <div className="flex-1 flex flex-col items-center justify-start gap-4 pt-8">
               <h1 className="text-white text-2xl sm:text-3xl md:text-5xl font-medium tracking-tighter max-w-none px-6 text-center whitespace-nowrap leading-[1.1]">
                 {ctaSection.title}
               </h1>
@@ -32,15 +32,10 @@ export function CTASection() {
               ) : null}
             </div>
             {ctaSection.button.text ? (
-              <Link
-                href={ctaSection.button.href}
-                target="_blank"
-                rel="noreferrer"
-                className="bg-white text-black h-10 flex items-center justify-center gap-2 text-sm font-medium tracking-wide rounded-full px-6 hover:bg-white/90 transition-all ease-out active:scale-95 group"
-              >
+              <WaitlistCta className="bg-white text-black h-10 flex items-center justify-center gap-2 text-sm font-medium tracking-wide rounded-full px-6 hover:bg-white/90 transition-all ease-out active:scale-95 group cursor-pointer">
                 {ctaSection.button.text}
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
+              </WaitlistCta>
             ) : null}
           </div>
         </div>
