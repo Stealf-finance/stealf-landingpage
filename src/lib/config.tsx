@@ -32,7 +32,7 @@ export const DOCS_URL = "https://stealf-1.gitbook.io/stealf-docs";
 export const siteConfig = {
   name: "Stealf",
   description:
-    "A privacy-first neobank on Solana — Bank wallet (Turnkey custody, EUR cards & transfers) and Stealth wallet (self-custodial, Umbra-encrypted balance), in one app.",
+    "Stealf is a stablecoin-based neobank focused on privacy, we combine confidentiality with a complete banking experience while staying fully compliant.",
   cta: "Join Waitlist",
   url: process.env.NEXT_PUBLIC_APP_URL || "https://stealf.xyz",
   keywords: [

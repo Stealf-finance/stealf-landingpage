@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Stealf",
   url: "https://stealf.xyz",
   description:
-    "A privacy-first neobank on Solana — Bank wallet (Turnkey custody, EUR cards & transfers) and Stealth wallet (self-custodial, Umbra-encrypted balance), in one app.",
+    "Stealf is a stablecoin-based neobank focused on privacy, we combine confidentiality with a complete banking experience while staying fully compliant.",
   links: {
     twitter: "https://x.com/stealf_finance",
     github: "https://github.com/Stealf-finance",
