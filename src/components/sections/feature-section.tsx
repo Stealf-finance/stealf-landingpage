@@ -20,7 +20,7 @@ export function FeatureSection() {
       </SectionHeader>
       <div className="w-full h-full lg:h-[620px] flex items-center justify-center">
         <FeatureComponent
-          collapseDelay={5000}
+          collapseDelay={10000}
           linePosition="bottom"
           featureItems={items}
           lineColor="bg-secondary"

@@ -105,7 +105,7 @@ export const siteConfig = {
       {
         id: 2,
         name: "Umbra",
-        role: "privacy",
+        role: "private transfers",
         href: "https://www.umbraprivacy.com",
         logo: (
           <span className="font-bold text-2xl tracking-tight text-foreground leading-none">
@@ -119,9 +119,13 @@ export const siteConfig = {
         role: "settlement",
         href: "https://solana.com/",
         logo: (
-          <span className="font-bold text-2xl tracking-tight text-foreground leading-none">
-            Solana
-          </span>
+          <Image
+            src="/icons-protocols/solana.svg"
+            alt="Solana"
+            width={140}
+            height={32}
+            className="h-9 w-auto object-contain brightness-0 invert opacity-85"
+          />
         ),
       },
       {
@@ -131,7 +135,7 @@ export const siteConfig = {
         href: "https://www.helius.dev",
         logo: (
           <Image
-            src="/icons-protocols/logo.svg"
+            src="/icons-protocols/helius.svg"
             alt="Helius"
             width={140}
             height={32}
@@ -142,7 +146,7 @@ export const siteConfig = {
       {
         id: 5,
         name: "Rain",
-        role: "card",
+        role: "banking infrastructure",
         href: "https://www.rain.xyz",
         logo: (
           <Image
@@ -157,12 +161,16 @@ export const siteConfig = {
       {
         id: 6,
         name: "Turnkey",
-        role: "custody (TEE)",
+        role: "Secure, flexible, and scalable wallet infrastructure",
         href: "https://www.turnkey.com",
         logo: (
-          <span className="font-bold text-2xl tracking-tight text-foreground leading-none">
-            Turnkey
-          </span>
+          <Image
+            src="/icons-protocols/turnkey.svg"
+            alt="Turnkey"
+            width={140}
+            height={32}
+            className="h-9 w-auto object-contain brightness-0 invert opacity-85"
+          />
         ),
       },
     ],

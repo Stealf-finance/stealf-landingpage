@@ -9,6 +9,7 @@ import React, {
 } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { useInView } from "motion/react";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
@@ -193,12 +194,14 @@ export const Feature = ({
 
           if (item.image) {
             return (
-              <img
+              <Image
                 key={item.id}
                 src={item.image}
                 alt={item.title}
+                fill
+                priority={isActive}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className={cn(fadeClass, "object-contain")}
-                loading="eager"
               />
             );
           }

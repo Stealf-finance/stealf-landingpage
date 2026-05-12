@@ -421,9 +421,6 @@ export default function TermsPage() {
             <h2 className="text-2xl font-medium tracking-tight">16. Contact</h2>
             <address className="not-italic text-muted-foreground space-y-1">
               <div className="text-foreground">Stealf, Inc.</div>
-              <div className="italic opacity-70">
-                Delaware registered office address
-              </div>
               <div>
                 Email:{" "}
                 <a
