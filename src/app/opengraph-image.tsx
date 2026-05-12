@@ -31,7 +31,7 @@ export default async function Image() {
           }}
         >
           <img
-            src={`${baseUrl}/agent-template-og.png`}
+            src={`${baseUrl}/image.png`}
             alt={alt}
             style={{
               width: "100%",
