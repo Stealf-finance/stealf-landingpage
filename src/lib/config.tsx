@@ -135,7 +135,7 @@ export const siteConfig = {
         href: "https://www.helius.dev",
         logo: (
           <Image
-            src="/icons-protocols/logo.svg"
+            src="/icons-protocols/helius.svg"
             alt="Helius"
             width={140}
             height={32}
