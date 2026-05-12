@@ -123,13 +123,13 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
               <li>
                 <span className="text-foreground">Provide the service:</span>{" "}
-                route magic links, display balances and transaction history,
-                process swaps and yield operations
+                authenticate sign-ins, display balances and transaction
+                history, process swaps and yield operations
               </li>
               <li>
                 <span className="text-foreground">Communicate:</span> send
-                authentication magic links, account-related notifications, and
-                (only if you opt in) product updates
+                one-time passcodes for email authentication, account-related
+                notifications, and (only if you opt in) product updates
               </li>
               <li>
                 <span className="text-foreground">Security:</span> detect abuse,
@@ -151,16 +151,17 @@ export default function PrivacyPage() {
               Authentication &amp; Biometrics
             </h2>
             <p className="text-muted-foreground">
-              Stealf uses OAuth (via Turnkey) to authenticate access to your
-              Bank wallet. Biometric authentication (Face ID, Touch ID,
-              fingerprint) is handled locally by iOS or Android. We never
-              receive, store, or transmit your facial images, biometric
-              templates, fingerprints, or any biometric data. We only receive
-              the result of the local authentication (success or failure).
+              Stealf authenticates access to your Bank wallet via Turnkey using
+              OAuth (Google, Apple) or one-time passcodes sent to your email.
+              Biometric authentication (Face ID, Touch ID, fingerprint) is
+              handled locally by iOS or Android. We never receive, store, or
+              transmit your facial images, biometric templates, fingerprints,
+              or any biometric data. We only receive the result of the local
+              authentication (success or failure).
             </p>
             <p className="text-muted-foreground">
-              Magic links sent to your email expire after a short period and are
-              invalidated after use.
+              One-time passcodes sent to your email expire after a short period
+              and are invalidated after use.
             </p>
           </section>
 
