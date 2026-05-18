@@ -58,7 +58,7 @@ export default function RootLayout({
       </head> */}
 
       <body
-        className="antialiased font-sans bg-background"
+        className="antialiased font-sans bg-background overflow-x-clip"
       >
         <ThemeProvider
           attribute="class"

@@ -107,7 +107,7 @@ export const siteConfig = {
         role: "private transfers",
         href: "https://www.umbraprivacy.com",
         logo: (
-          <span className="font-bold text-2xl tracking-tight text-foreground leading-none">
+          <span className="font-bold text-lg md:text-2xl tracking-tight text-foreground leading-none text-center whitespace-nowrap">
             Umbra Privacy
           </span>
         ),

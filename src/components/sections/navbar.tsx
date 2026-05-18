@@ -101,6 +101,7 @@ export function Navbar() {
         initial={{ width: INITIAL_WIDTH }}
         animate={{ width: hasScrolled ? MAX_WIDTH : INITIAL_WIDTH }}
         transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+        style={{ maxWidth: "100%" }}
       >
         <div
           className={cn(

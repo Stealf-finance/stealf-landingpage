@@ -228,7 +228,7 @@ export const Feature = ({
   return (
     <div ref={ref} className="w-full">
       <div className="flex w-full flex-col items-center justify-center max-w-7xl mx-auto">
-        <div className="grid h-full grid-cols-5 gap-x-10 px-10 md:px-20 items-center w-full">
+        <div className="grid h-full grid-cols-5 gap-x-10 px-4 sm:px-6 md:px-10 lg:px-20 items-center w-full">
           <div
             className={`col-span-2 w-full h-full hidden lg:flex md:items-center ${
               ltr ? "md:order-2 md:justify-end" : "justify-start"
@@ -308,11 +308,11 @@ export const Feature = ({
             </Accordion.Root>
           </div>
           <div
-            className={`col-span-5 h-[560px] min-h-[360px] w-auto lg:col-span-3 flex items-center justify-center ${
+            className={`col-span-5 lg:col-span-3 lg:h-[560px] lg:min-h-[360px] flex items-center justify-center w-full ${
               ltr && "md:order-1"
             }`}
           >
-            <div className="relative h-full aspect-[2211/3490]">
+            <div className="relative aspect-[2211/3490] w-[220px] sm:w-[260px] md:w-[300px] lg:w-auto lg:h-full">
               <div
                 aria-hidden
                 className="pointer-events-none absolute -inset-x-64 -inset-y-24 -z-10 [background:radial-gradient(closest-side,rgba(241,236,225,0.12),transparent_70%)] blur-3xl"
