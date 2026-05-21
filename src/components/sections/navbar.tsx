@@ -113,7 +113,7 @@ export function Navbar() {
         >
           <div className="flex h-[56px] items-center justify-between p-4">
             <Link href="/" className="flex items-center gap-3">
-              <Image src="/logo-transparent.png" alt="stealf" width={40} height={40} className="size-7 md:size-10 object-contain" priority />
+              <Image src="/logo-t.svg" alt="stealf" width={40} height={40} className="size-7 md:size-10 object-contain" priority />
               <p className="text-xl font-bold text-foreground tracking-tight">stealf</p>
             </Link>
 
@@ -166,7 +166,7 @@ export function Navbar() {
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
                   <Link href="/" className="flex items-center gap-3">
-                    <Image src="/logo-transparent.png" alt="stealf" width={40} height={40} className="size-7 md:size-10 object-contain" priority />
+                    <Image src="/logo-t.svg" alt="stealf" width={40} height={40} className="size-7 md:size-10 object-contain" priority />
                     <p className="text-xl font-bold text-foreground tracking-tight">
                       stealf
                     </p>

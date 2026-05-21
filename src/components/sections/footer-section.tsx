@@ -42,7 +42,7 @@ export function FooterSection() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <Link href="/" className="flex items-center gap-3 w-fit">
             <Image
-              src="/logo-transparent.png"
+              src="/logo-t.svg"
               alt="stealf"
               width={40}
               height={40}
