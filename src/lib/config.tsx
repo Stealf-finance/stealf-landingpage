@@ -103,9 +103,13 @@ export const siteConfig = {
         role: "private transfers",
         href: "https://www.umbraprivacy.com",
         logo: (
-          <span className="font-bold text-lg md:text-2xl tracking-tight text-foreground leading-none text-center whitespace-nowrap">
-            Umbra Privacy
-          </span>
+          <Image
+            src="/icons-protocols/umbra.svg"
+            alt="Arcium"
+            width={160}
+            height={40}
+            className="h-7 w-auto object-contain brightness-0 invert opacity-85"
+          />
         ),
       },
       {
