@@ -68,20 +68,16 @@ export const siteConfig = {
         <span className="relative inline-flex size-1.5 rounded-full bg-foreground" />
       </span>
     ),
-    badge: "Private beta now live",
+    badge: "Beta now live",
     title: "Your privacy-first neobank on Solana.",
     description:
       "Stealf is a stablecoin-based neobank focused on privacy, we combine confidentiality with a complete banking experience while staying fully compliant.",
-    cta: {
-      primary: {
-        text: "Join Waitlist",
-        href: WAITLIST_URL,
-        note: "+2,000 people already on the waitlist",
-      },
-      secondary: {
-        text: "Read the docs",
-        href: DOCS_URL,
-      },
+    download: {
+      apps: [
+        { id: "ios", label: "TestFlight", sublabel: "Beta on iOS", href: "https://testflight.apple.com/join/TXbFmeER" },
+        { id: "android", label: "Google Play", sublabel: "Beta on Android", href: "https://play.google.com/apps/testing/com.stealf.app" },
+        { id: "apk", label: "Download APK", sublabel: "Direct install", href: "https://expo.dev/artifacts/eas/7fjSoJZQP4zAuQrhsmGGUi.apk" },
+      ],
     },
   },
   companyShowcase: {
@@ -285,11 +281,6 @@ export const siteConfig = {
     id: "cta",
     title: "Hold crypto, Spend cash, Stay private.",
     backgroundImage: "/agent-cta-background.png",
-    button: {
-      text: "Join the waitlist",
-      href: WAITLIST_URL,
-    },
-    subtext: "Be first when we open up new seats.",
   },
   footerLinks: [
     {
