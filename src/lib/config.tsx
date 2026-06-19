@@ -31,7 +31,7 @@ export const DOCS_URL = "https://stealf-1.gitbook.io/stealf-docs";
 export const siteConfig = {
   name: "Stealf",
   description:
-    "Stealf is a stablecoin-based neobank focused on privacy, we combine confidentiality with a complete banking experience while staying fully compliant.",
+    "Stealf is built on two layers: a stablecoin payment account to spend like cash anywhere, and a privacy layer on your wallet that keeps your funds yours.",
   cta: "Join Waitlist",
   url: process.env.NEXT_PUBLIC_APP_URL || "https://stealf.xyz",
   keywords: [
@@ -69,9 +69,9 @@ export const siteConfig = {
       </span>
     ),
     badge: "Beta now live",
-    title: "Your privacy-first neobank on Solana.",
+    title: "Stealth Finance ",
     description:
-      "Stealf is a stablecoin-based neobank focused on privacy, we combine confidentiality with a complete banking experience while staying fully compliant.",
+      "Stealf is built on two layers: a stablecoin payment account to spend like cash anywhere, and a privacy layer on your wallet that keeps your funds yours.",
     download: {
       apps: [
         { id: "ios", label: "TestFlight", sublabel: "Beta on iOS", href: "https://testflight.apple.com/join/TXbFmeER" },
@@ -181,7 +181,7 @@ export const siteConfig = {
     items: [
       {
         id: 1,
-        title: "Import or create your stealth wallet",
+        title: "Import or create your private wallet",
         content:
           "Today you juggle two apps — banking and wallet — never really own your keys, and privacy means a third app on top. Stealf collapses all three into one: your keys, your privacy, by default.",
         image: "/screens/stealth-public.png",
@@ -190,14 +190,14 @@ export const siteConfig = {
         id: 2,
         title: "Shield any asset",
         content:
-          "Move any token from your public balance into your encrypted balance inside Umbra Privacy in one tap. The deposit is public. From there, your balance stays private.",
+          "Move any token from your public balance into your encrypted balance inside Umbra in one tap. The deposit is public. From there, your balance stays private.",
         image: "/screens/stealth-private.png",
       },
       {
         id: 3,
         title: "Move funds between your wallets",
         content:
-          "Move funds between your two wallets in two taps, privately. There's no direct on-chain link between them.",
+          "Move funds between your accounts in two taps, privately. There's no on-chain link between them.",
         image: "/screens/move.png",
       },
       {
@@ -210,29 +210,29 @@ export const siteConfig = {
     ],
   },
   bentoSection: {
-    title: "Two wallets. One app.",
+    title: "No on-chain link between them.",
     description:
-      "The dual-wallet architecture that gives users back what cash always offered by default: financial privacy.",
+      "Spend without revealing your wallet. Trade without revealing your identity.",
     items: [
       {
         id: 1,
         content: <BankWalletIllustration />,
-        title: "Bank wallet",
+        title: "Stablecoin account",
         description:
-          "Managed via Turnkey (TEE), your bridge to the real world. Connected to banking infrastructure (virtual bank account, card payments, transfers), KYC-compliant by design.",
+          "Your money for everyday life. Pay for your coffee, tap your card, send a transfer — a compliant account wired to the real banking system. Secured by Turnkey.",
       },
       {
         id: 2,
         content: <StealthWalletIllustration />,
-        title: "Stealth wallet",
+        title: "Your private wallet",
         description:
-          "Self-custodial Stealth wallet, created locally or imported, powered by the Umbra Privacy SDK. You hold the keys, control what you share, and invest privately.",
+          "Yours, and only yours. Whether you create it or import it, you hold the keys, control what you share, and transfer privately. Powered by Umbra.",
       },
     ],
   },
   quoteSection: {
     quote:
-      "Crypto cards are exploding. AI reads it all: balances, flows, habits — profiled at scale. Without native privacy, onchain isn't freedom anymore. It's a glass house.",
+      "Stablecoins and crypto cards are going mainstream — adoption is exploding. And AI reads it all: balances, flows, habits, profiled at scale. Without native privacy, onchain isn't freedom anymore. It's a glass house. Stealf is the way out.",
     author: {
       name: "Thomas",
       role: "Technical Co-founder, Stealf",
@@ -254,13 +254,13 @@ export const siteConfig = {
         id: 2,
         question: "Does Stealf require identity verification?",
         answer:
-          "Only for banking features (cards, virtual bank account, EUR transfers). The stealth wallet itself stays permissionless and can be used without KYC. Staying compliant where it matters is a core principle of Stealf.",
+          "Only for banking features (cards, virtual bank account, bank transfers). The private wallet itself stays permissionless and can be used without KYC. Staying compliant where it matters is a core principle of Stealf.",
       },
       {
         id: 3,
         question: "What is your current stage?",
         answer:
-          "Stealf is in private beta with private transfers and the dual-wallet architecture already live. We're currently raising our first round.",
+          "Stealf is in private beta with private transfers and the dual-layer architecture already live. We're currently raising our first round.",
       },
       {
         id: 4,
@@ -277,7 +277,7 @@ export const siteConfig = {
         id: 6,
         question: "Can I export my private keys?",
         answer:
-          "Yes — Stealf is self-custodial. For your bank wallet, your private key is managed by Turnkey inside a Trusted Execution Environment (TEE), so it's never exposed. For your stealth wallet, your private key is stored only on your device.",
+          "Yes — Stealf is self-custodial. For your stablecoin account, your private key is managed by Turnkey inside a Trusted Execution Environment (TEE), so it's never exposed. For your private wallet, your private key is stored only on your device.",
       },
     ],
   },
