@@ -27,10 +27,10 @@ const socials = [
     invert: false,
   },
   {
-    label: "Gitbook",
-    href: "https://stealf-1.gitbook.io/stealf-docs",
-    src: "/social-icons/gitbook.svg",
-    invert: true,
+    label: "Medium",
+    href: "https://medium.com/p/bd5a6f88da14?postPublishedType=initial",
+    src: "/social-icons/medium.png",
+    invert: false,
   },
 ];
 
