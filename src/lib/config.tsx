@@ -57,8 +57,7 @@ export const siteConfig = {
     links: [
       { id: 1, name: "Home", href: "#hero" },
       { id: 2, name: "How it Works", href: "#bento" },
-      { id: 3, name: "Features", href: "#features" },
-      { id: 4, name: "FAQ", href: "#faq" },
+      { id: 3, name: "FAQ", href: "#faq" },
     ],
   },
   hero: {
@@ -68,16 +67,19 @@ export const siteConfig = {
         <span className="relative inline-flex size-1.5 rounded-full bg-foreground" />
       </span>
     ),
-    badge: "Beta now live",
-    title: "Stealth Finance ",
+    badge: "Introducing private digital cash",
+    title: "Stealth Finance",
     description:
       "Stealf is built on two layers: a stablecoin payment account to spend like cash anywhere, and a privacy layer on your wallet that keeps your funds yours.",
-    download: {
-      apps: [
-        { id: "ios", label: "TestFlight", sublabel: "Beta on iOS", href: "https://testflight.apple.com/join/TXbFmeER" },
-        { id: "android", label: "Google Play", sublabel: "Beta on Android", href: "https://play.google.com/apps/testing/com.stealf.app" },
-        { id: "apk", label: "Download APK", sublabel: "Direct install", href: "https://expo.dev/artifacts/eas/7fjSoJZQP4zAuQrhsmGGUi.apk" },
-      ],
+    cta: {
+      primary: {
+        text: "Read the article",
+        href: "https://medium.com/p/bd5a6f88da14",
+      },
+      secondary: {
+        text: "Join community",
+        href: "https://discord.com/invite/7w2TFCm6Ft",
+      },
     },
   },
   companyShowcase: {
@@ -129,38 +131,8 @@ export const siteConfig = {
       },
       {
         id: 4,
-        name: "Helius",
-        role: "RPC & indexing",
-        href: "https://www.helius.dev",
-        logo: (
-          <Image
-            src="/icons-protocols/helius.svg"
-            alt="Helius"
-            width={140}
-            height={32}
-            className="h-7 w-auto object-contain brightness-0 invert opacity-85"
-          />
-        ),
-      },
-      {
-        id: 5,
-        name: "Rain",
-        role: "banking infrastructure",
-        href: "https://www.rain.xyz",
-        logo: (
-          <Image
-            src="/icons-protocols/rain.svg"
-            alt="Rain"
-            width={140}
-            height={32}
-            className="h-7 w-auto object-contain brightness-0 invert opacity-85"
-          />
-        ),
-      },
-      {
-        id: 6,
         name: "Turnkey",
-        role: "Secure, flexible, and scalable wallet infrastructure",
+        role: "key management (TEE)",
         href: "https://www.turnkey.com",
         logo: (
           <Image
@@ -174,41 +146,6 @@ export const siteConfig = {
       },
     ],
   },
-  featureSection: {
-    title: "Features",
-    description:
-      "A single interface where you actually own your money, keep it private by default, and still spend it in the real world.",
-    items: [
-      {
-        id: 1,
-        title: "Import or create your private wallet",
-        content:
-          "Today you juggle two apps — banking and wallet — never really own your keys, and privacy means a third app on top. Stealf collapses all three into one: your keys, your privacy, by default.",
-        image: "/screens/stealth-public.png",
-      },
-      {
-        id: 2,
-        title: "Shield any asset",
-        content:
-          "Move any token from your public balance into your encrypted balance inside Umbra in one tap. The deposit is public. From there, your balance stays private.",
-        image: "/screens/stealth-private.png",
-      },
-      {
-        id: 3,
-        title: "Move funds between your wallets",
-        content:
-          "Move funds between your accounts in two taps, privately. There's no on-chain link between them.",
-        image: "/screens/move.png",
-      },
-      {
-        id: 4,
-        title: "Spend like a bank",
-        content:
-          "Compliant. Seamless. Global. Pay with your Stealf card. Transfer instantly. Fully regulated infrastructure",
-        image: "/screens/bank.png",
-      },
-    ],
-  },
   bentoSection: {
     title: "No on-chain link between them.",
     description:
@@ -219,20 +156,20 @@ export const siteConfig = {
         content: <BankWalletIllustration />,
         title: "Stablecoin account",
         description:
-          "Your money for everyday life. Pay for your coffee, tap your card, send a transfer — a compliant account wired to the real banking system. Secured by Turnkey.",
+          "Your money for everyday life. Tap your card at the counter or send a transfer, on a compliant account wired to the real banking system. Secured by Turnkey.",
       },
       {
         id: 2,
         content: <StealthWalletIllustration />,
         title: "Your private wallet",
         description:
-          "Yours, and only yours. Whether you create it or import it, you hold the keys, control what you share, and transfer privately. Powered by Umbra.",
+          "Yours, and only yours. Create it or import it; either way you hold the keys, and your transfers stay private. Powered by Umbra.",
       },
     ],
   },
   quoteSection: {
     quote:
-      "Stablecoins and crypto cards are going mainstream — adoption is exploding. And AI reads it all: balances, flows, habits, profiled at scale. Without native privacy, onchain isn't freedom anymore. It's a glass house. Stealf is the way out.",
+      "Adoption isn't the question anymore: Privacy Cash alone moved past $400M in private transfers. The problem is that every balance and every payment leaves a trace, and in 2026 that trace is easier to follow than ever. Onchain without native privacy isn't freedom, it's a glass house.",
     author: {
       name: "Thomas",
       role: "Technical Co-founder, Stealf",
@@ -248,13 +185,13 @@ export const siteConfig = {
         id: 1,
         question: "Who is Stealf for?",
         answer:
-          "Stealf is built for crypto-native users — traders, freelancers, founders — whose financial life lives onchain. People who need a mobile-first interface to manage their money, stay in full control, and remain private by default, without losing the real-world rails (cards, bank accounts, payments) they still rely on every day.",
+          "Crypto-native users whose financial life already lives onchain: traders, freelancers paid in USDC, founders. They want to run their money from their phone and stay private by default, without giving up the cards and bank transfers they still rely on every day.",
       },
       {
         id: 2,
         question: "Does Stealf require identity verification?",
         answer:
-          "Only for banking features (cards, virtual bank account, bank transfers). The private wallet itself stays permissionless and can be used without KYC. Staying compliant where it matters is a core principle of Stealf.",
+          "Only for the banking side: cards, virtual account, bank transfers. The private wallet stays permissionless, and you can use it without ever passing KYC. We apply KYC where the law demands it, not across the whole product.",
       },
       {
         id: 3,
@@ -271,20 +208,15 @@ export const siteConfig = {
         id: 5,
         question: "Is Stealf only available on Solana?",
         answer:
-          "Yes. Arcium on Solana delivers protocol-level confidentiality without leaving a fast, scalable, DeFi-rich ecosystem. You no longer have to choose between privacy and utility — Zcash and Monero solved privacy but lack the protocol depth Solana offers.",
+          "Yes. Arcium brings protocol-level confidentiality to Solana without giving up the liquidity and DeFi depth that make the chain worth using. Zcash and Monero solved privacy years ago, but neither has that ecosystem around it, so you'd be trading one problem for another.",
       },
       {
         id: 6,
         question: "Can I export my private keys?",
         answer:
-          "Yes — Stealf is self-custodial. For your stablecoin account, your private key is managed by Turnkey inside a Trusted Execution Environment (TEE), so it's never exposed. For your private wallet, your private key is stored only on your device.",
+          "Yes. Stealf is self-custodial. Turnkey holds your stablecoin account key inside a Trusted Execution Environment, so it's never exposed. Your private wallet key never leaves your device.",
       },
     ],
-  },
-  ctaSection: {
-    id: "cta",
-    title: "Hold crypto, Spend cash, Stay private.",
-    backgroundImage: "/agent-cta-background.png",
   },
   footerLinks: [
     {

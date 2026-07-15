@@ -12,7 +12,7 @@ export function CompanyShowcase() {
       <p className="text-muted-foreground font-medium">
         Built on best-in-class infrastructure
       </p>
-      <div className="grid w-full max-w-7xl grid-cols-2 md:grid-cols-3 overflow-hidden border-y border-border items-center justify-center z-20">
+      <div className="grid w-full max-w-7xl grid-cols-2 md:grid-cols-4 overflow-hidden border-y border-border items-center justify-center z-20">
         {companyShowcase.companyLogos.map((logo) => (
           <Link
             href={logo.href}

@@ -1,3 +1,8 @@
+"use client";
+
+import { FlickeringGrid } from "@/components/ui/flickering-grid";
+import { useMediaQuery } from "@/hooks/use-media-query";
+import { siteConfig } from "@/lib/config";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -35,23 +40,30 @@ const socials = [
 ];
 
 export function FooterSection() {
+  const tablet = useMediaQuery("(max-width: 1024px)");
+
   return (
     <footer id="footer" className="w-full pb-0">
       <div className="flex flex-col gap-8 px-10 pt-12 pb-8">
         {/* Brand + socials */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-          <Link href="/" className="flex items-center gap-3 w-fit">
-            <Image
-              src="/logo-t.svg"
-              alt="stealf"
-              width={40}
-              height={40}
-              className="size-9 object-contain"
-            />
-            <p className="text-xl font-bold text-foreground tracking-tight">
-              stealf
+          <div className="flex flex-col items-start gap-y-4 max-w-sm">
+            <Link href="/" className="flex items-center gap-3 w-fit">
+              <Image
+                src="/logo-t.svg"
+                alt="stealf"
+                width={40}
+                height={40}
+                className="size-9 object-contain"
+              />
+              <p className="text-xl font-bold text-foreground tracking-tight">
+                stealf
+              </p>
+            </Link>
+            <p className="tracking-tight text-muted-foreground font-medium">
+              {siteConfig.hero.description}
             </p>
-          </Link>
+          </div>
           <div className="flex items-center gap-3">
             {socials.map(({ label, href, src, invert }) => (
               <Link
@@ -113,6 +125,22 @@ export function FooterSection() {
               </a>
             </span>
           </div>
+        </div>
+      </div>
+
+      <div className="w-full h-48 md:h-64 relative mt-24 z-0">
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent to-background z-10 from-40%" />
+        <div className="absolute inset-0 mx-6">
+          <FlickeringGrid
+            text="stealf"
+            fontSize={tablet ? 90 : 140}
+            className="h-full w-full"
+            squareSize={2}
+            gridGap={tablet ? 2 : 3}
+            color="var(--muted-foreground)"
+            maxOpacity={0.3}
+            flickerChance={0.1}
+          />
         </div>
       </div>
     </footer>
