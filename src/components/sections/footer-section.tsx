@@ -89,7 +89,7 @@ export function FooterSection() {
         {/* Legal + contact + status */}
         <div className="flex flex-col gap-3 pt-6 border-t border-border text-sm text-muted-foreground">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-            <span>© {new Date().getFullYear()} Stealf. All rights reserved.</span>
+            <span>Stealf is a technology company, not a bank.</span>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               <Link
                 href="/privacy"
@@ -113,7 +113,7 @@ export function FooterSection() {
           </div>
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs">
             <span className="text-muted-foreground/70">
-              Status: stealf.xyz · operational
+              © {new Date().getFullYear()} Stealf. All rights reserved.
             </span>
             <span className="text-muted-foreground/70">
               Contact:{" "}
