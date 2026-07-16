@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useScroll } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const INITIAL_WIDTH = "70rem";
@@ -51,6 +52,9 @@ const drawerMenuVariants = {
 
 export function Navbar() {
   const { scrollY } = useScroll();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const onBlog = pathname?.startsWith("/blog");
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
@@ -119,6 +123,17 @@ export function Navbar() {
             <NavMenu />
 
             <div className="flex flex-row items-center gap-1 md:gap-3 shrink-0">
+              <Link
+                href="/blog"
+                className={cn(
+                  "px-4 py-2 hidden md:flex items-center rounded-full text-sm font-medium tracking-tight transition-colors duration-200",
+                  onBlog
+                    ? "text-foreground bg-accent/60 border border-border"
+                    : "text-foreground/60 hover:text-foreground",
+                )}
+              >
+                Blog
+              </Link>
               <button
                 className="md:hidden border border-border size-8 rounded-md cursor-pointer flex items-center justify-center"
                 onClick={toggleDrawer}
@@ -183,26 +198,52 @@ export function Navbar() {
                         className="p-2.5 border-b border-border last:border-b-0"
                         variants={drawerMenuVariants}
                       >
-                        <a
-                          href={item.href}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            const element = document.getElementById(
-                              item.href.substring(1),
-                            );
-                            element?.scrollIntoView({ behavior: "smooth" });
-                            setIsDrawerOpen(false);
-                          }}
-                          className={`underline-offset-4 hover:text-foreground/80 transition-colors ${
-                            activeSection === item.href.substring(1)
-                              ? "text-foreground font-medium"
-                              : "text-foreground/60"
-                          }`}
-                        >
-                          {item.name}
-                        </a>
+                        {isHome ? (
+                          <a
+                            href={item.href}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              const element = document.getElementById(
+                                item.href.substring(1),
+                              );
+                              element?.scrollIntoView({ behavior: "smooth" });
+                              setIsDrawerOpen(false);
+                            }}
+                            className={`underline-offset-4 hover:text-foreground/80 transition-colors ${
+                              activeSection === item.href.substring(1)
+                                ? "text-foreground font-medium"
+                                : "text-foreground/60"
+                            }`}
+                          >
+                            {item.name}
+                          </a>
+                        ) : (
+                          <Link
+                            href={`/${item.href}`}
+                            onClick={() => setIsDrawerOpen(false)}
+                            className="underline-offset-4 text-foreground/60 hover:text-foreground/80 transition-colors"
+                          >
+                            {item.name}
+                          </Link>
+                        )}
                       </motion.li>
                     ))}
+                    <motion.li
+                      className="p-2.5 border-b border-border last:border-b-0"
+                      variants={drawerMenuVariants}
+                    >
+                      <Link
+                        href="/blog"
+                        onClick={() => setIsDrawerOpen(false)}
+                        className={`underline-offset-4 hover:text-foreground/80 transition-colors ${
+                          onBlog
+                            ? "text-foreground font-medium"
+                            : "text-foreground/60"
+                        }`}
+                      >
+                        Blog
+                      </Link>
+                    </motion.li>
                   </AnimatePresence>
                 </motion.ul>
               </div>

@@ -92,6 +92,12 @@ export function FooterSection() {
             <span>Stealf is a technology company, not a bank.</span>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               <Link
+                href="/blog"
+                className="hover:text-foreground transition-colors"
+              >
+                Blog
+              </Link>
+              <Link
                 href="/privacy"
                 className="hover:text-foreground transition-colors"
               >

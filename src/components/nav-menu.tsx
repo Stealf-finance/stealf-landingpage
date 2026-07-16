@@ -2,6 +2,8 @@
 
 import { siteConfig } from "@/lib/config";
 import { motion } from "motion/react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useRef, useState } from "react";
 
 interface NavItem {
@@ -12,6 +14,8 @@ interface NavItem {
 const navs: NavItem[] = siteConfig.nav.links;
 
 export function NavMenu() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const ref = useRef<HTMLUListElement>(null);
   const [left, setLeft] = useState(0);
   const [width, setWidth] = useState(0);
@@ -20,6 +24,7 @@ export function NavMenu() {
   const [isManualScroll, setIsManualScroll] = useState(false);
 
   React.useEffect(() => {
+    if (!isHome) return;
     // Initialize with first nav item
     const firstItem = ref.current?.querySelector(
       `[href="#${navs[0].href.substring(1)}"]`,
@@ -30,9 +35,10 @@ export function NavMenu() {
       setWidth(rect.width);
       setIsReady(true);
     }
-  }, []);
+  }, [isHome]);
 
   React.useEffect(() => {
+    if (!isHome) return;
     const handleScroll = () => {
       // Skip scroll handling during manual click scrolling
       if (isManualScroll) return;
@@ -63,7 +69,7 @@ export function NavMenu() {
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Initial check
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isManualScroll]);
+  }, [isManualScroll, isHome]);
 
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -114,17 +120,21 @@ export function NavMenu() {
           <li
             key={item.name}
             className={`z-10 cursor-pointer h-full flex items-center justify-center px-4 py-2 text-sm font-medium transition-colors duration-200 ${
-              activeSection === item.href.substring(1)
+              isHome && activeSection === item.href.substring(1)
                 ? "text-foreground"
                 : "text-foreground/60 hover:text-foreground"
             } tracking-tight`}
           >
-            <a href={item.href} onClick={(e) => handleClick(e, item)}>
-              {item.name}
-            </a>
+            {isHome ? (
+              <a href={item.href} onClick={(e) => handleClick(e, item)}>
+                {item.name}
+              </a>
+            ) : (
+              <Link href={`/${item.href}`}>{item.name}</Link>
+            )}
           </li>
         ))}
-        {isReady && (
+        {isReady && isHome && (
           <motion.li
             animate={{ left, width }}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
