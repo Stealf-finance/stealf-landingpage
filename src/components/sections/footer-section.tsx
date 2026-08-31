@@ -9,7 +9,7 @@ import Link from "next/link";
 const socials = [
   {
     label: "X",
-    href: "https://x.com/stealf_finance",
+    href: "https://x.com/STEALFxyz",
     src: "/social-icons/x.png",
     invert: false,
   },

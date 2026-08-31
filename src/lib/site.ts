@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "Stealf is a stablecoin-based neobank focused on privacy, we combine confidentiality with a complete banking experience while staying fully compliant.",
   links: {
-    twitter: "https://x.com/stealf_finance",
+    twitter: "https://x.com/STEALFxyz",
     github: "https://github.com/Stealf-finance",
   },
 };
