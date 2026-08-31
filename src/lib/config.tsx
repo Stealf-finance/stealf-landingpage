@@ -54,7 +54,7 @@ export const siteConfig = {
   ],
   links: {
     email: "louis@stealf.xyz",
-    twitter: "https://x.com/stealf_finance",
+    twitter: "https://x.com/STEALFxyz",
     discord: "https://discord.com/invite/7w2TFCm6Ft",
     github: "https://github.com/Stealf-finance",
     telegram: "https://t.me/+1KiIlJTX5WIzMmM0",

@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    creator: "@stealf_finance",
+    creator: "@STEALFxyz",
   },
   robots: {
     index: true,
