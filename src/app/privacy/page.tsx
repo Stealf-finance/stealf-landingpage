@@ -26,7 +26,7 @@ export default function PrivacyPage() {
               Privacy Policy
             </h1>
             <p className="text-sm text-muted-foreground">
-              Last Updated: May 11, 2026
+              Last Updated: September 2, 2026
             </p>
           </header>
 
@@ -35,10 +35,10 @@ export default function PrivacyPage() {
               Introduction
             </h2>
             <p className="text-muted-foreground">
-              Stealf is a privacy-first Solana mobile wallet operated by Stealf,
-              Inc., a company incorporated in Delaware, USA. This Privacy Policy
-              explains what data we collect, how we use it, and the rights you
-              have over it.
+              Stealf is a privacy-first neobank on Solana operated by Stealf
+              Corporation, a company incorporated in the State of Delaware, USA.
+              This Privacy Policy explains what data we collect, how we use it,
+              who we share it with, and the rights you have over it.
             </p>
             <p className="text-muted-foreground">
               By using Stealf, you agree to the practices described below. If
@@ -51,67 +51,112 @@ export default function PrivacyPage() {
               What We Collect
             </h2>
             <p className="text-muted-foreground">
-              When you create an account and use Stealf, we collect:
+              Depending on which features you use, we collect:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
               <li>
                 <span className="text-foreground">Account info:</span> email
-                address, username
+                address and username.
               </li>
               <li>
                 <span className="text-foreground">Wallet addresses:</span> the
-                public address of your Bank wallet (created via Turnkey) and
-                your Stealth wallet (created locally on your device)
+                public address of your wallet (created via Turnkey) and, if you
+                use private features, your on-device stealth address.
               </li>
               <li>
                 <span className="text-foreground">On-chain transactions:</span>{" "}
-                amounts, timestamps, counterparty addresses, signatures. This
-                data is already public on the Solana blockchain — we read it via
-                Helius to display your history.
-              </li>
-              <li>
-                <span className="text-foreground">Technical data:</span> IP
-                address, device type, OS version, app version
+                amounts, timestamps, counterparty addresses, and signatures.
+                This data is already public on the Solana blockchain — we read
+                it via Helius to display your history.
               </li>
               <li>
                 <span className="text-foreground">
-                  Crash and error reports:
+                  Identity verification (KYC) data:
                 </span>{" "}
-                collected via Sentry to fix bugs (disabled in development)
+                if you use features that convert crypto to fiat (cash-out /
+                off-ramp), you and our regulated partner collect the identity
+                information required to verify you — see &quot;Identity
+                Verification&quot; below.
+              </li>
+              <li>
+                <span className="text-foreground">Financial data:</span> for
+                cash-out, the bank account details (e.g. IBAN or account
+                number) you provide to receive fiat, and the associated payout
+                records.
+              </li>
+              <li>
+                <span className="text-foreground">Gift-card orders:</span> the
+                product, denomination, and amount when you purchase a gift card.
+                We do not store the delivered gift-card codes.
+              </li>
+              <li>
+                <span className="text-foreground">Technical data:</span> IP
+                address, device type, OS version, and app version.
+              </li>
+              <li>
+                <span className="text-foreground">
+                  Diagnostics and product analytics:
+                </span>{" "}
+                crash and error reports (via Sentry) and anonymized usage events
+                (via PostHog), used to fix bugs and improve the product. Session
+                replay is disabled.
               </li>
             </ul>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              What We Don&apos;t Collect
+              Identity Verification (KYC / AML)
             </h2>
             <p className="text-muted-foreground">
-              This is the part that matters. By design:
+              Converting crypto to fiat is a regulated activity. When you use
+              our cash-out feature, identity verification is required by law
+              (anti-money-laundering and know-your-customer regulations). This
+              verification is handled through our licensed payments partner,
+              Dakota, using identity-verification providers (Sumsub and/or
+              Persona).
             </p>
+            <p className="text-muted-foreground">
+              As part of this process you may be asked to provide your legal
+              name, date of birth, residential address, a government-issued ID,
+              and a selfie / liveness check. This information is collected and
+              processed by our KYC providers and our payments partner to verify
+              your identity and screen against sanctions lists.
+            </p>
+            <p className="text-muted-foreground">
+              Stealf does not store your government ID images or biometric
+              (selfie / liveness) data — that data is processed by the
+              specialized providers above. We retain only the verification
+              status and the records we are legally required to keep.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-medium tracking-tight">
+              Privacy by Design — What We Don&apos;t See
+            </h2>
+            <p className="text-muted-foreground">This is the part that matters:</p>
             <ul className="list-disc pl-6 space-y-3 text-muted-foreground">
               <li>
-                We never see or store the private key of your Stealth wallet.
+                We never see or store the private key of your stealth wallet.
                 It&apos;s generated on your device and stored in the secure
                 enclave (iOS Keychain / Android Keystore). It never leaves the
                 device.
               </li>
               <li>
-                We never see your yield balances in plaintext. Yield balances
-                are encrypted via Arcium MPC. Even our backend can&apos;t
-                decrypt them without the multi-party computation.
+                We never see your private (encrypted) balance in plaintext. Your
+                private balance is encrypted through Umbra&apos;s confidential
+                protocol (which runs on the Arcium MPC network). Even our
+                backend cannot decrypt it.
               </li>
               <li>
-                We don&apos;t link your Bank wallet and your Stealth wallet.
-                There is no shared identifier between them in our system. The
-                separation is structural, not a policy choice.
+                We never receive the private key of your Turnkey-secured wallet.
+                It is held inside Turnkey&apos;s secure key-management
+                infrastructure; only you can authorize it through your login.
               </li>
               <li>
-                We don&apos;t collect KYC data, government IDs, biometric data,
-                or financial information. Banking features (cards, transfers)
-                are not part of the current product. If we add them later, this
-                policy will be updated and you&apos;ll be notified before any
-                new data is collected.
+                We do not sell your personal data, and we do not share it for
+                advertising.
               </li>
             </ul>
           </section>
@@ -123,27 +168,30 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
               <li>
                 <span className="text-foreground">Provide the service:</span>{" "}
-                authenticate sign-ins, display balances and transaction
-                history, process swaps and yield operations
+                authenticate sign-ins, display balances and transaction history,
+                process swaps, yield, gift-card purchases, and cash-outs.
+              </li>
+              <li>
+                <span className="text-foreground">Verify identity:</span> meet
+                our know-your-customer and anti-money-laundering obligations for
+                regulated features.
               </li>
               <li>
                 <span className="text-foreground">Communicate:</span> send
-                one-time passcodes for email authentication, account-related
-                notifications, and (only if you opt in) product updates
+                one-time passcodes for email authentication, account and
+                transaction notifications, and (only if you opt in) product
+                updates.
               </li>
               <li>
                 <span className="text-foreground">Security:</span> detect abuse,
-                rate-limit suspicious activity, debug errors
+                rate-limit suspicious activity, and debug errors.
               </li>
               <li>
                 <span className="text-foreground">Legal compliance:</span>{" "}
-                respond to lawful requests when required
+                comply with applicable law and respond to lawful requests when
+                required.
               </li>
             </ul>
-            <p className="text-muted-foreground">
-              We do not sell your personal data. We do not share it for
-              advertising.
-            </p>
           </section>
 
           <section className="space-y-4">
@@ -151,17 +199,20 @@ export default function PrivacyPage() {
               Authentication &amp; Biometrics
             </h2>
             <p className="text-muted-foreground">
-              Stealf authenticates access to your Bank wallet via Turnkey using
-              OAuth (Google, Apple) or one-time passcodes sent to your email.
-              Biometric authentication (Face ID, Touch ID, fingerprint) is
-              handled locally by iOS or Android. We never receive, store, or
-              transmit your facial images, biometric templates, fingerprints,
-              or any biometric data. We only receive the result of the local
-              authentication (success or failure).
+              Stealf authenticates access to your wallet via Turnkey using OAuth
+              (Google, Apple) or one-time passcodes sent to your email. Any
+              device biometric authentication (Face ID, Touch ID, fingerprint)
+              is handled locally by iOS or Android — we never receive, store, or
+              transmit your facial images, fingerprints, or any device biometric
+              templates. We only receive the result of the local authentication
+              (success or failure).
             </p>
             <p className="text-muted-foreground">
-              One-time passcodes sent to your email expire after a short period
-              and are invalidated after use.
+              The selfie / liveness check used for identity verification (KYC)
+              is separate and is processed by our KYC providers, not stored by
+              Stealf (see &quot;Identity Verification&quot; above). One-time
+              passcodes sent to your email expire after a short period and are
+              invalidated after use.
             </p>
           </section>
 
@@ -192,13 +243,33 @@ export default function PrivacyPage() {
                   {[
                     [
                       "Turnkey",
-                      "Bank wallet management, OAuth authentication",
+                      "Wallet key management, OAuth authentication",
                       "Email, wallet address",
                     ],
                     [
-                      "Helius",
-                      "Solana RPC and transaction webhooks",
-                      "Wallet addresses (already public on-chain)",
+                      "Dakota",
+                      "Crypto-to-fiat cash-out, identity verification (KYC/AML)",
+                      "Name, date of birth, address, government ID, bank details, transactions",
+                    ],
+                    [
+                      "Sumsub / Persona",
+                      "Identity verification on behalf of Dakota",
+                      "Government ID, selfie / liveness, personal details",
+                    ],
+                    [
+                      "Bitrefill",
+                      "Gift-card fulfillment",
+                      "Order and amount details",
+                    ],
+                    [
+                      "Reflect",
+                      "USDC+ yield (STLF)",
+                      "Wallet address, on-chain transactions",
+                    ],
+                    [
+                      "Umbra",
+                      "Confidential balance and private transfers",
+                      "Encrypted data only",
                     ],
                     [
                       "Jupiter",
@@ -206,26 +277,31 @@ export default function PrivacyPage() {
                       "Wallet address, transaction parameters",
                     ],
                     [
-                      "Arcium",
-                      "Encrypted yield computation (MPC)",
-                      "Encrypted ciphertexts only",
+                      "xStocks (Backed)",
+                      "Tokenized stocks",
+                      "Wallet address, on-chain transactions",
                     ],
                     [
-                      "Jito",
-                      "SOL liquid staking",
-                      "On-chain transactions (already public)",
+                      "Helius",
+                      "Solana RPC and transaction data",
+                      "Wallet addresses (already public on-chain)",
                     ],
-                    [
-                      "Resend",
-                      "Sending authentication emails",
-                      "Email address",
-                    ],
+                    ["Resend", "Sending authentication emails", "Email address"],
                     [
                       "Sentry",
                       "Error monitoring",
                       "Crash logs, anonymized context",
                     ],
-                    ["MongoDB Atlas", "Database hosting", "Account data"],
+                    [
+                      "PostHog",
+                      "Product analytics",
+                      "Anonymized usage events (no keys or balances)",
+                    ],
+                    [
+                      "MongoDB Atlas / Railway",
+                      "Database and application hosting",
+                      "Account data (email encrypted at rest)",
+                    ],
                     ["CoinGecko", "SOL/USD price feed", "No personal data"],
                   ].map(([provider, purpose, data]) => (
                     <tr
@@ -282,7 +358,10 @@ export default function PrivacyPage() {
               <li>non-discrimination for exercising your rights</li>
             </ul>
             <p className="text-muted-foreground">
-              To exercise any of these rights, email us at{" "}
+              Some rights are limited where we are legally required to keep
+              certain records (for example, identity-verification and
+              transaction records under anti-money-laundering law). To exercise
+              any of these rights, email us at{" "}
               <a
                 href="mailto:louis@stealf.xyz"
                 className="text-foreground hover:underline"
@@ -301,8 +380,15 @@ export default function PrivacyPage() {
             <p className="text-muted-foreground">
               We keep your account data for as long as your account is active.
               If you delete your account, we delete your personal data within 90
-              days, except where we are legally required to retain it (for
-              example, fraud prevention or legal claims).
+              days, except where we are legally required to retain it.
+            </p>
+            <p className="text-muted-foreground">
+              In particular, identity-verification (KYC) data and
+              cash-out/transaction records tied to regulated features are
+              retained for the period required by applicable
+              anti-money-laundering and financial regulations (typically up to
+              five years after the end of our relationship), even after account
+              deletion.
             </p>
             <p className="text-muted-foreground">
               On-chain transactions cannot be deleted — they are permanent
@@ -325,7 +411,7 @@ export default function PrivacyPage() {
               We use industry-standard measures to protect your data: encryption
               in transit (HTTPS/WSS), encryption at rest, restricted access,
               rate limiting, and monitoring. No system is 100% secure, and you
-              are responsible for keeping your device, OAuth, and recovery
+              are responsible for keeping your device, login, and recovery
               phrase safe.
             </p>
           </section>
@@ -343,16 +429,20 @@ export default function PrivacyPage() {
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">Contact</h2>
-            <p className="text-muted-foreground">
-              Questions? Email{" "}
-              <a
-                href="mailto:louis@stealf.xyz"
-                className="text-foreground hover:underline"
-              >
-                louis@stealf.xyz
-              </a>
-              .
-            </p>
+            <address className="not-italic text-muted-foreground space-y-1">
+              <div className="text-foreground">Stealf Corporation</div>
+              <div>1111b South Governors Avenue, STE 40928</div>
+              <div>Dover, DE 19904, United States</div>
+              <div>
+                Email:{" "}
+                <a
+                  href="mailto:louis@stealf.xyz"
+                  className="text-foreground hover:underline"
+                >
+                  louis@stealf.xyz
+                </a>
+              </div>
+            </address>
           </section>
         </article>
       </div>
