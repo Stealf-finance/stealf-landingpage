@@ -73,8 +73,8 @@ export const siteConfig = {
         <span className="relative inline-flex size-1.5 rounded-full bg-foreground" />
       </span>
     ),
-    badge: "Introducing private digital cash",
-    title: "Stealth Finance",
+    badge: "Built on Solana",
+    title: "The privacy layer for everyday finance",
     description:
       "Stealf is built on two layers: a stablecoin payment account to spend like cash anywhere, and a privacy layer on your wallet that keeps your funds yours.",
     downloads: [
