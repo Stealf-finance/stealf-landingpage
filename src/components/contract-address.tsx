@@ -34,7 +34,7 @@ export function ContractAddress({
     <div className="w-full max-w-3xl flex flex-col gap-2">
       <span className="text-sm text-muted-foreground">Official CA</span>
 
-      <div className="flex flex-col sm:flex-row gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-3">
         <div className="flex-1 min-w-0 flex items-center gap-3 rounded-xl border border-border bg-accent px-3 py-2.5">
           <Image
             src="/logo-t.svg"
