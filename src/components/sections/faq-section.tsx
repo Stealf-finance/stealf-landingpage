@@ -13,7 +13,7 @@ export function FAQSection() {
   return (
     <section
       id="faq"
-      className="flex flex-col items-center justify-center gap-10 pb-10 w-full relative"
+      className="flex flex-col items-center justify-center gap-10 pb-20 md:pb-28 w-full relative"
     >
       <SectionHeader>
         <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance">
@@ -28,7 +28,7 @@ export function FAQSection() {
         <Accordion
           type="single"
           collapsible
-          className="w-full border-b-0 grid gap-2"
+          className="w-full border-b-0 grid gap-3"
         >
           {faqSection.faQitems.map((faq, index) => (
             <AccordionItem

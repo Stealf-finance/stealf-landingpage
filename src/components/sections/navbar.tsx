@@ -54,7 +54,7 @@ export function Navbar() {
   const { scrollY } = useScroll();
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const onBlog = pathname?.startsWith("/blog");
+  const onTokenomics = pathname?.startsWith("/tokenomics");
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
@@ -124,15 +124,15 @@ export function Navbar() {
 
             <div className="flex flex-row items-center gap-1 md:gap-3 shrink-0">
               <Link
-                href="/blog"
+                href="/tokenomics"
                 className={cn(
                   "px-4 py-2 hidden md:flex items-center rounded-full text-sm font-medium tracking-tight transition-colors duration-200",
-                  onBlog
+                  onTokenomics
                     ? "text-foreground bg-accent/60 border border-border"
                     : "text-foreground/60 hover:text-foreground",
                 )}
               >
-                Blog
+                Tokenomics
               </Link>
               <button
                 className="md:hidden border border-border size-8 rounded-md cursor-pointer flex items-center justify-center"
@@ -233,15 +233,15 @@ export function Navbar() {
                       variants={drawerMenuVariants}
                     >
                       <Link
-                        href="/blog"
+                        href="/tokenomics"
                         onClick={() => setIsDrawerOpen(false)}
                         className={`underline-offset-4 hover:text-foreground/80 transition-colors ${
-                          onBlog
+                          onTokenomics
                             ? "text-foreground font-medium"
                             : "text-foreground/60"
                         }`}
                       >
-                        Blog
+                        Tokenomics
                       </Link>
                     </motion.li>
                   </AnimatePresence>

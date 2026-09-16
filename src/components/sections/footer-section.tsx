@@ -92,10 +92,10 @@ export function FooterSection() {
             <span>Stealf is a technology company, not a bank.</span>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               <Link
-                href="/blog"
+                href="/tokenomics"
                 className="hover:text-foreground transition-colors"
               >
-                Blog
+                Tokenomics
               </Link>
               <Link
                 href="/privacy"

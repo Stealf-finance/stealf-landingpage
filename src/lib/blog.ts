@@ -10,6 +10,20 @@ export type Post = {
 // Add new posts here, newest first.
 export const posts: Post[] = [
   {
+    title: "$STEALF tokenomics",
+    date: "2026-09-15",
+    excerpt: "",
+    author: "Stealf team",
+    href: "https://x.com/STEALFxyz/status/2099868121792192828",
+  },
+  {
+    title: "One year of building Stealf",
+    date: "2026-09-13",
+    excerpt: "",
+    author: "Louis (Co-founder)",
+    href: "https://x.com/0xCecor/status/2099201285916352902",
+  },
+  {
     title: "Private digital cash.",
     date: "2026-07-16",
     excerpt: "Introducing Stealf. Here is what we're building and why.",

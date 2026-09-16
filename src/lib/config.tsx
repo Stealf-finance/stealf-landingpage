@@ -78,9 +78,9 @@ export const siteConfig = {
     description:
       "Stealf is built on two layers: a stablecoin payment account to spend like cash anywhere, and a privacy layer on your wallet that keeps your funds yours.",
     downloads: [
-      { id: 1, text: "TestFlight", href: TESTFLIGHT_URL },
-      { id: 2, text: "Google Play", href: PLAY_STORE_URL },
-      { id: 3, text: "APK", href: APK_URL },
+      { id: 1, text: "TestFlight", href: TESTFLIGHT_URL, primary: true },
+      { id: 2, text: "Google Play", href: PLAY_STORE_URL, primary: false },
+      { id: 3, text: "APK", href: APK_URL, primary: false },
     ],
   },
   companyShowcase: {
@@ -167,15 +167,6 @@ export const siteConfig = {
           "Yours, and only yours. Create it or import it; either way you hold the keys, and your transfers stay private. Powered by Umbra.",
       },
     ],
-  },
-  quoteSection: {
-    quote:
-      "Adoption isn't the question anymore: Privacy Cash alone moved past $400M in private transfers. The problem is that every balance and every payment leaves a trace, and in 2026 that trace is easier to follow than ever. Onchain without native privacy isn't freedom, it's a glass house.",
-    author: {
-      name: "Thomas",
-      role: "Technical Co-founder, Stealf",
-      image: "/ppp.jpg",
-    },
   },
   faqSection: {
     title: "Frequently Asked Questions",
