@@ -29,10 +29,10 @@
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
-  --color-gold: var(--gold);
-  --color-gold-dim: var(--gold-dim);
-  --color-gold-faint: var(--gold-faint);
-  --color-gold-glow: var(--gold-glow);
+  --color-silver: var(--silver);
+  --color-silver-dim: var(--silver-dim);
+  --color-silver-faint: var(--silver-faint);
+  --color-silver-glow: var(--silver-glow);
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -260,33 +260,42 @@
 }
 
 .dark {
-  /* Stealf brand tokens — ported from stealf-app/src/design-system/tokens.ts */
-  --background: #0a0a0a;                          /* T.bg */
-  --foreground: #f1ece1;                          /* T.ink */
-  --card: #151513;                                /* T.bgRaised */
-  --card-foreground: #f1ece1;
-  --popover: #151513;
-  --popover-foreground: #f1ece1;
-  --primary: #f1ece1;                             /* ink — Stealf brand primary (NOT gold) */
-  --primary-foreground: #0a0a0a;
-  --secondary: #1e1d1a;                           /* T.bgRaised2 — surface for CTAs/cards */
-  --secondary-foreground: #f1ece1;
-  --muted: #1e1d1a;
-  --muted-foreground: rgba(241, 236, 225, 0.65); /* T.inkDim */
-  --accent: rgba(241, 236, 225, 0.06);            /* silver wash, NOT gold */
-  --accent-foreground: #f1ece1;
-  --destructive: #d1604a;                         /* T.error */
-  --destructive-foreground: #f1ece1;
-  --border: rgba(241, 236, 225, 0.09);            /* T.hairline */
-  --input: rgba(241, 236, 225, 0.09);
-  --ring: rgba(241, 236, 225, 0.35);              /* silver focus, NOT gold */
+  /* Quiet-luxury scale — see
+     docs/superpowers/specs/2026-09-16-landingpage-quiet-luxury-redesign-design.md
+     Landing-specific and deliberately neutral. It is close to, but not
+     generated from, stealf-app/src/design-system/palettes.ts (SILVER);
+     nothing keeps the two in sync. */
+  --background: #0a0a0b;                           /* page */
+  --foreground: #e8e8ea;                           /* off-white ink */
+  --card: #121214;                                 /* matte surface */
+  --card-foreground: #e8e8ea;
+  --popover: #121214;
+  --popover-foreground: #e8e8ea;
+  --primary: #e8e8ea;                              /* ink is the brand primary */
+  --primary-foreground: #0a0a0b;
+  --secondary: #18181b;                            /* raised surface — CTAs, cards */
+  --secondary-foreground: #e8e8ea;
+  --muted: #18181b;
+  --muted-foreground: rgba(232, 232, 234, 0.62);   /* soft grey, stays translucent so
+                                                      it lifts with raised surfaces */
+  --accent: rgba(232, 232, 234, 0.05);             /* wash — FAQ items, nav pill, hovers */
+  --accent-foreground: #e8e8ea;
+  --destructive: #d1604a;
+  --destructive-foreground: #e8e8ea;
+  --border: rgba(232, 232, 234, 0.09);             /* hairline */
+  --input: rgba(232, 232, 234, 0.09);
+  --ring: rgba(232, 232, 234, 0.3);
 
-  /* Privacy-scoped gold — opt-in only via var(--gold) or Tailwind text-gold/bg-gold.
-     Mirrors stealf-app: gold is reserved for Stealth wallet / privacy surfaces. */
-  --gold: #c9a86a;
-  --gold-dim: rgba(201, 168, 106, 0.5);
-  --gold-faint: rgba(201, 168, 106, 0.15);
-  --gold-glow: rgba(201, 168, 106, 0.28);
+  /* Satin silver — the page's only metal, opt-in via var(--silver) or
+     Tailwind text-silver / fill-silver. Replaces the former gold. */
+  --silver: #c9c9cc;
+  --silver-dim: rgba(201, 201, 204, 0.5);
+  --silver-faint: rgba(201, 201, 204, 0.15);
+  --silver-glow: rgba(220, 220, 225, 0.28);
+
+  /* Soft raised shadow for CTAs — restrained specular, per the brief. */
+  --shadow-raised: inset 0 1px 1px rgba(255, 255, 255, 0.08),
+    0 1px 2px rgba(0, 0, 0, 0.5);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);

@@ -132,7 +132,7 @@ export default function TokenomicsPage() {
         </div>
       </section>
 
-      <div className="mt-auto w-full pt-10">
+      <div className="mt-auto w-full pt-20 md:pt-28">
         <FooterSection />
       </div>
     </main>

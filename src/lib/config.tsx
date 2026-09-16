@@ -78,9 +78,9 @@ export const siteConfig = {
     description:
       "Stealf is built on two layers: a stablecoin payment account to spend like cash anywhere, and a privacy layer on your wallet that keeps your funds yours.",
     downloads: [
-      { id: 1, text: "TestFlight", href: TESTFLIGHT_URL },
-      { id: 2, text: "Google Play", href: PLAY_STORE_URL },
-      { id: 3, text: "APK", href: APK_URL },
+      { id: 1, text: "TestFlight", href: TESTFLIGHT_URL, primary: true },
+      { id: 2, text: "Google Play", href: PLAY_STORE_URL, primary: false },
+      { id: 3, text: "APK", href: APK_URL, primary: false },
     ],
   },
   companyShowcase: {

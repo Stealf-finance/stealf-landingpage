@@ -35,7 +35,7 @@ export function LinkGrid({
           href={item.href}
           target="_blank"
           rel="noreferrer"
-          className="group w-full h-24 md:h-32 flex flex-col items-center justify-center relative p-3 md:p-4 gap-1.5 md:gap-2 before:absolute before:-left-1 before:top-0 before:z-10 before:h-screen before:w-px before:bg-border before:content-[''] after:absolute after:-top-1 after:left-0 after:z-10 after:h-px after:w-screen after:bg-border after:content-['']"
+          className="group w-full h-24 md:h-36 flex flex-col items-center justify-center relative p-3 md:p-4 gap-1.5 md:gap-2 before:absolute before:-left-1 before:top-0 before:z-10 before:h-screen before:w-px before:bg-border before:content-[''] after:absolute after:-top-1 after:left-0 after:z-10 after:h-px after:w-screen after:bg-border after:content-['']"
           key={item.id}
         >
           <div className="transition-all duration-300 ease-[cubic-bezier(0.165,0.84,0.44,1)] translate-y-2 group-hover:-translate-y-3 grid place-items-center">

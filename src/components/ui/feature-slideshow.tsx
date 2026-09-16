@@ -315,7 +315,7 @@ export const Feature = ({
             <div className="relative aspect-[2211/3490] w-[220px] sm:w-[260px] md:w-[300px] lg:w-auto lg:h-full">
               <div
                 aria-hidden
-                className="pointer-events-none absolute -inset-x-64 -inset-y-24 -z-10 [background:radial-gradient(closest-side,rgba(241,236,225,0.12),transparent_70%)] blur-3xl"
+                className="pointer-events-none absolute -inset-x-64 -inset-y-24 -z-10 [background:radial-gradient(closest-side,rgba(232,232,234,0.12),transparent_70%)] blur-3xl"
               />
               {renderMedia()}
             </div>
