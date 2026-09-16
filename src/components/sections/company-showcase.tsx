@@ -6,7 +6,7 @@ export function CompanyShowcase() {
   return (
     <section
       id="company"
-      className="flex flex-col items-center justify-center gap-10 py-20 md:py-28 w-full relative px-6"
+      className="flex flex-col items-center justify-center gap-10 pt-20 md:pt-28 w-full relative px-6"
     >
       <p className="text-muted-foreground font-medium">
         Built on best-in-class infrastructure
