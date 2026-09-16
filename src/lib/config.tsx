@@ -168,15 +168,6 @@ export const siteConfig = {
       },
     ],
   },
-  quoteSection: {
-    quote:
-      "Adoption isn't the question anymore: Privacy Cash alone moved past $400M in private transfers. The problem is that every balance and every payment leaves a trace, and in 2026 that trace is easier to follow than ever. Onchain without native privacy isn't freedom, it's a glass house.",
-    author: {
-      name: "Thomas",
-      role: "Technical Co-founder, Stealf",
-      image: "/ppp.jpg",
-    },
-  },
   faqSection: {
     title: "Frequently Asked Questions",
     description:
