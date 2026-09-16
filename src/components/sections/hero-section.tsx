@@ -19,7 +19,7 @@ export function HeroSection() {
             }}
           ></div>
         </div>
-        <div className="relative z-10 pt-28 md:pt-40 max-w-3xl mx-auto h-full w-full flex flex-col gap-10 items-center justify-center">
+        <div className="relative z-10 pt-12 md:pt-16 max-w-3xl mx-auto h-full w-full flex flex-col gap-10 items-center justify-center">
           <p className="border border-border bg-accent rounded-full text-sm h-8 px-3 flex items-center gap-2">
             {hero.badgeIcon}
             {hero.badge}
