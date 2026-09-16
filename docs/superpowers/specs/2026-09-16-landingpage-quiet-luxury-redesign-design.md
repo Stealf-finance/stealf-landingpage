@@ -143,7 +143,7 @@ only with a reason.
 | Hero | `pt-20 md:pt-32` to `pt-28 md:pt-40`; h1 to `text-4xl md:text-6xl lg:text-7xl`; screenshot gap `mt-10` to `mt-16 md:mt-20`. The radial gradient stays — it is the brief's "subtle charcoal gradient, soft lighting". |
 | CompanyShowcase | Default rhythm; cells `md:h-32` to `md:h-36`. |
 | Quote | `p-14` to `py-20 md:py-28`; quote to `md:text-3xl`, `leading-relaxed`, measure `max-w-3xl` to `max-w-2xl`. |
-| Bento | Default rhythm; height cleanup (below). |
+| Bento | **No vertical padding** — see below. Height cleanup only. |
 | FAQ | Default rhythm; item spacing `gap-2` to `gap-3`. |
 | Footer | Rhythm only. |
 
@@ -160,6 +160,14 @@ The three download buttons are identical solid pills today. TestFlight
 keeps the solid `bg-secondary` treatment; Google Play and APK become
 `border border-border bg-transparent hover:bg-accent`, same height and
 radius. This deliberately steers visitors toward iOS.
+
+### Bento keeps zero vertical padding
+
+The default rhythm does not apply here. The bento's bordered box is meant
+to sit flush against the `divide-y` rules that `page.tsx` draws between
+sections, and its hatched side bands are `h-full` of that box. Give the
+section `py-*` and the box floats: the bands start and end in mid-air
+instead of running rule to rule, which reads as detached.
 
 ### Bento height cleanup
 
