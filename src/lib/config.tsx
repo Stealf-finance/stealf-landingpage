@@ -28,12 +28,6 @@ export const BLUR_FADE_DELAY = 0.15;
 export const WAITLIST_URL = "https://form.typeform.com/to/ZA5GecRj";
 export const DOCS_URL = "https://stealf-1.gitbook.io/stealf-docs";
 
-// App download links (beta).
-export const TESTFLIGHT_URL = "https://testflight.apple.com/join/TXbFmeER";
-export const PLAY_STORE_URL =
-  "https://play.google.com/apps/testing/com.stealf.app";
-export const APK_URL = "https://expo.dev/artifacts/eas/7fjSoJZQP4zAuQrhsmGGUi.apk";
-
 export const siteConfig = {
   name: "Stealf",
   description:
@@ -77,11 +71,6 @@ export const siteConfig = {
     title: "The privacy layer for everyday finance",
     description:
       "Stealf is built on two layers: a stablecoin payment account to spend like cash anywhere, and a privacy layer on your wallet that keeps your funds yours.",
-    downloads: [
-      { id: 1, text: "TestFlight", href: TESTFLIGHT_URL, primary: true },
-      { id: 2, text: "Google Play", href: PLAY_STORE_URL, primary: false },
-      { id: 3, text: "APK", href: APK_URL, primary: false },
-    ],
   },
   companyShowcase: {
     companyLogos: [

@@ -1,4 +1,3 @@
-import { HeroCta } from "@/components/hero-cta";
 import { siteConfig } from "@/lib/config";
 import Image from "next/image";
 
@@ -32,7 +31,6 @@ export function HeroSection() {
               {hero.description}
             </p>
           </div>
-          <HeroCta />
         </div>
         <div className="relative z-10 w-full max-w-5xl mx-auto mt-16 md:mt-20 px-6">
           <Image
