@@ -28,6 +28,9 @@ export const BLUR_FADE_DELAY = 0.15;
 export const WAITLIST_URL = "https://form.typeform.com/to/ZA5GecRj";
 export const DOCS_URL = "https://stealf-1.gitbook.io/stealf-docs";
 
+// App download link (beta).
+export const TESTFLIGHT_URL = "https://testflight.apple.com/join/TXbFmeER";
+
 export const siteConfig = {
   name: "Stealf",
   description:
