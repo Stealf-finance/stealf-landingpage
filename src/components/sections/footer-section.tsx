@@ -2,7 +2,7 @@
 
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
 import { useMediaQuery } from "@/hooks/use-media-query";
-import { siteConfig } from "@/lib/config";
+import { DOCS_URL, siteConfig } from "@/lib/config";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -36,6 +36,12 @@ const socials = [
     href: "https://medium.com/p/bd5a6f88da14?postPublishedType=initial",
     src: "/social-icons/medium.png",
     invert: false,
+  },
+  {
+    label: "GitBook",
+    href: DOCS_URL,
+    src: "/social-icons/gitbook.svg",
+    invert: true,
   },
 ];
 

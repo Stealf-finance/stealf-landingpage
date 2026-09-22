@@ -26,7 +26,7 @@ export const BLUR_FADE_DELAY = 0.15;
 
 // Single source of truth — referenced by hero, navbar, mobile drawer, and CTA section.
 export const WAITLIST_URL = "https://form.typeform.com/to/ZA5GecRj";
-export const DOCS_URL = "https://stealf-1.gitbook.io/stealf-docs";
+export const DOCS_URL = "https://stealf-fi.gitbook.io/docs";
 
 // App download link (beta).
 export const TESTFLIGHT_URL = "https://testflight.apple.com/join/TXbFmeER";
