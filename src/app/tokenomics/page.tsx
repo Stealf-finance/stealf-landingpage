@@ -11,25 +11,12 @@ export const metadata: Metadata = {
   description: "Supply and allocation breakdown for the Stealf token.",
 };
 
-const SOLSCAN = "https://solscan.io/account";
 const TOKEN_MINT = "G5W6LwkLeoj6rZqBP1y3KT8k6Cz6rXGJmMNU3TArXtXw";
 const SOL_MINT = "So11111111111111111111111111111111111111112";
 
 const tokenLinks = [
   {
     id: 1,
-    title: "Treasury Multisig",
-    action: "View on Solscan",
-    href: `${SOLSCAN}/6ft148d35RewhX2qFA5wboMDHzN34S7m36YnYGCbvosk`,
-  },
-  {
-    id: 2,
-    title: "Community Multisig",
-    action: "View on Solscan",
-    href: `${SOLSCAN}/2crLBskVxF1kv6qffgznf6b6wWgzFvv16kxqnyf8DodM`,
-  },
-  {
-    id: 3,
     title: "Team",
     action: "Vested on JupLock",
     href: `https://lock.jup.ag/token/${TOKEN_MINT}`,
@@ -69,7 +56,7 @@ export default function TokenomicsPage() {
           tradeUrl={`https://jup.ag/swap?buy=${TOKEN_MINT}&sell=${SOL_MINT}`}
         />
         <LinkGrid
-          className="grid-cols-1 sm:grid-cols-3"
+          className="grid-cols-1"
           items={tokenLinks.map((link) => ({
             id: link.id,
             href: link.href,
