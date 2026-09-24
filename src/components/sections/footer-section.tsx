@@ -125,7 +125,7 @@ export function FooterSection() {
           </div>
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs">
             <span className="text-muted-foreground/70">
-              © {new Date().getFullYear()} Stealf. All rights reserved.
+              © {new Date().getFullYear()} Stealf Corporation. All rights reserved.
             </span>
             <span className="text-muted-foreground/70">
               Contact:{" "}
